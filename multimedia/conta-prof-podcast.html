@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Recurso multimedia 12 — Podcast institucional · UI: Carbón + Oro, estilo profesional -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Podcast Institucional con IA · Brayan Vanegas · FESNA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="t12">
+  <a href="../index.html#actividades" class="back-link">← Volver al portafolio</a>
+  <a href="../index.html#actividades" class="btn-cerrar" aria-label="Cerrar módulo">×</a>
+
+  <div class="page-shell">
+    <header class="page-header">
+      <span class="page-kicker">Contaduría Pública · Profesional</span>
+      <h1 class="page-title">Podcast Institucional</h1>
+      <p class="page-sub">NIIF/NIC, auditoría, revisoría fiscal y ética profesional con asistencia de inteligencia artificial.</p>
+    </header>
+
+    <section class="media-section">
+      <h3><span class="tag tag-prof">INSTITUCIONAL</span> Episodio profesional</h3>
+      <p>Podcast de nivel profesional que aborda los pilares de la contaduría moderna, con producción asistida por IA y tono ejecutivo.</p>
+
+      <div class="chip-row">
+        <span class="chip">NIIF / NIC</span>
+        <span class="chip">Auditoría</span>
+        <span class="chip">Revisoría fiscal</span>
+        <span class="chip">Ética profesional</span>
+      </div>
+
+      <div style="max-width:520px;margin:0 auto 2rem;text-align:center">
+        <audio controls style="width:100%;max-width:500px;border-radius:12px;box-shadow:var(--shadow);margin:1rem 0">
+          <source src="podcast-conta-prof.m4a" type="audio/mp4">
+          Tu navegador no soporta la reproducción de audio.
+        </audio>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:.5rem">Podcast Institucional · Contaduría Pública · FESNA</p>
+      </div>
+
+      <div style="margin-top:1.5rem;text-align:center">
+        <a href="podcast-conta-prof.m4a" download class="btn btn-primary">⬇ Descargar podcast institucional (M4A)</a>
+      </div>
+
+      <div class="grid3" style="margin-top:2rem">
+        <div class="media-card">
+          <h4>Objetivo</h4>
+          <p small>Difundir conocimientos de nivel profesional entre estudiantes y egresados de Contaduría Pública.</p>
+        </div>
+        <div class="media-card">
+          <h4>Producción</h4>
+          <p small>Guion, locución y edición asistidos por inteligencia artificial.</p>
+        </div>
+        <div class="media-card">
+          <h4>Uso</h4>
+          <p small>Material de apoyo académico y difusión institucional de la Facultad de Contaduría.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      Recurso multimedia académico · Brayan Vanegas · FESNA · Segundo corte 2026 · UI 12/12
+    </footer>
+
+    <script>
+      function toggleProf(btn){
+        const playing = btn.dataset.playing === 'true';
+        btn.dataset.playing = String(!playing);
+        btn.innerText = playing ? '▶' : '⏸';
+      }
+    </script>
+  </div>
+</body>
+</html>

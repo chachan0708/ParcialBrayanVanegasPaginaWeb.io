@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- Recurso multimedia 8 — Cuña radial · UI: Marrón + Crema, estilo radio vintage -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cuña Radial con IA · Brayan Vanegas · FESNA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="t8">
+  <a href="../index.html#actividades" class="back-link">← Volver al portafolio</a>
+  <a href="../index.html#actividades" class="btn-cerrar" aria-label="Cerrar módulo">×</a>
+
+  <div class="page-shell">
+    <header class="page-header">
+      <span class="page-kicker">Contaduría Pública · Técnica Profesional</span>
+      <h1 class="page-title">Cuña Radial</h1>
+      <p class="page-sub">Pieza promocional con guion y voz generados por IA sobre procesos contables.</p>
+    </header>
+
+    <section class="media-section">
+      <h3><span class="tag tag-cuna">RADIO</span> Estudio de cuña radial</h3>
+      <p>Anuncio sonoro breve al estilo radio institucional, con locución sintética y guion enfocado en procesos contables básicos.</p>
+
+      <div style="max-width:520px;margin:0 auto 2rem;text-align:center">
+        <audio controls style="width:100%;max-width:500px;border-radius:12px;box-shadow:var(--shadow);margin:1rem 0">
+          <source src="cuna-conta.mp3" type="audio/mpeg">
+          Tu navegador no soporta la reproducción de audio.
+        </audio>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:.5rem">Cuña radial · Contaduría Pública · FESNA</p>
+      </div>
+
+      <div style="margin-top:1.5rem;text-align:center">
+        <a href="cuna-conta.mp3" download class="btn btn-primary">⬇ Descargar cuña radial (MP3)</a>
+      </div>
+
+      <div class="grid3" style="margin-top:2rem">
+        <div class="media-card">
+          <h4>Guion</h4>
+          <p small>Redactado con IA, orientado a servicios contables y archivo tributario.</p>
+        </div>
+        <div class="media-card">
+          <h4>Locución</h4>
+          <p small>Voz sintética con tono profesional y ritmo publicitario radial.</p>
+        </div>
+        <div class="media-card">
+          <h4>Emisión</h4>
+          <p small>Radio institucional, altoparlantes de campus y canales digitales.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      Recurso multimedia académico · Brayan Vanegas · FESNA · Segundo corte 2026 · UI 8/12
+    </footer>
+
+    <script>
+      function toggleCuna(btn){
+        const playing = btn.dataset.playing === 'true';
+        btn.dataset.playing = String(!playing);
+        btn.innerText = playing ? '▶ Escuchar cuña' : '⏸ Detener audio';
+        btn.classList.toggle('btn-primary');
+        btn.classList.toggle('btn');
+        document.getElementById('dotCuna').style.opacity = playing ? '0' : '1';
+      }
+    </script>
+  </div>
+</body>
+</html>

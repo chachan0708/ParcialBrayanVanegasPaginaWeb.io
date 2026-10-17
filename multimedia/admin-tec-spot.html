@@ -1,0 +1,71 @@
+<!doctype html>
+<!-- Recurso multimedia 4 — Spot publicitario · UI: Rojo oscuro + Neón, visualizador de audio -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spot Publicitario con Voz IA · Brayan Vanegas · FESNA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="t4">
+  <a href="../index.html#actividades" class="back-link">← Volver al portafolio</a>
+  <a href="../index.html#actividades" class="btn-cerrar" aria-label="Cerrar módulo">×</a>
+
+  <div class="page-shell">
+    <header class="page-header">
+      <span class="page-kicker">Administración de Empresas · Tecnología en Gestión Administrativa</span>
+      <h1 class="page-title">Spot Publicitario</h1>
+      <p class="page-sub">Locución generada por IA para promocionar el programa Tecnología en Gestión Administrativa.</p>
+    </header>
+
+    <section class="media-section">
+      <h3><span class="tag tag-spot">SPOT AUDIO</span> Reproductor con visualizador</h3>
+      <p>Pieza publicitaria breve con voz sintética, diseñada para emisión en radio institucional y canales digitales.</p>
+
+      <div style="max-width:520px;margin:0 auto;text-align:center">
+        <audio controls style="width:100%;max-width:500px;border-radius:12px;box-shadow:var(--shadow);margin:1rem 0">
+          <source src="spot-admin-tec.mp3" type="audio/mpeg">
+          Tu navegador no soporta la reproducción de audio.
+        </audio>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:.5rem">Spot publicitario · Tecnología en Gestión Administrativa · FESNA</p>
+      </div>
+
+      <div style="margin-top:1.5rem;text-align:center">
+        <a href="spot-admin-tec.mp3" download class="btn btn-primary">⬇ Descargar spot (MP3)</a>
+      </div>
+
+      <div class="grid3" style="margin-top:2rem">
+        <div class="media-card">
+          <h4>Guion</h4>
+          <p small>Redactado con asistencia de IA, enfocado en beneficios del programa para el entorno laboral.</p>
+        </div>
+        <div class="media-card">
+          <h4>Locución</h4>
+          <p small>Voz generada por inteligencia artificial con entonación comercial y ritmo dinámico.</p>
+        </div>
+        <div class="media-card">
+          <h4>Uso</h4>
+          <p small>Difusión en cuñas radiales, redes sociales y pantalla de la institución.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      Recurso multimedia académico · Brayan Vanegas · FESNA · Segundo corte 2026 · UI 4/12
+    </footer>
+
+    <script>
+      function toggleSpot(btn){
+        const playing = btn.dataset.playing === 'true';
+        btn.dataset.playing = String(!playing);
+        btn.innerText = playing ? '▶ Reproducir spot' : '⏸ Detener spot';
+        btn.classList.toggle('btn-primary');
+        btn.classList.toggle('btn');
+        const dot = document.getElementById('dotSpot');
+        dot.style.opacity = playing ? '0' : '1';
+      }
+    </script>
+  </div>
+</body>
+</html>

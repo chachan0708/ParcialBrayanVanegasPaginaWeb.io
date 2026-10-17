@@ -1,0 +1,67 @@
+<!doctype html>
+<!-- Recurso multimedia 9 — Podcast "Conoce FESNA" · UI: Teal + Coral, reproductor de podcast -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Podcast "Conoce FESNA" · Brayan Vanegas · FESNA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="t9">
+  <a href="../index.html#actividades" class="back-link">← Volver al portafolio</a>
+  <a href="../index.html#actividades" class="btn-cerrar" aria-label="Cerrar módulo">×</a>
+
+  <div class="page-shell">
+    <header class="page-header">
+      <span class="page-kicker">Contaduría Pública · Tecnología en Gestión Contable y Financiera</span>
+      <h1 class="page-title">Podcast "Conoce FESNA"</h1>
+      <p class="page-sub">Análisis de estados financieros, presupuestos, indicadores de liquidez y normatividad tributaria intermedia.</p>
+    </header>
+
+    <section class="media-section">
+      <h3><span class="tag tag-pod">PODCAST</span> Episodio educativo</h3>
+      <p>Exposición didáctica de conceptos contables y financieros de nivel tecnológico, con asistencia de IA en guion y producción de audio.</p>
+
+      <div style="max-width:520px;margin:0 auto 2rem;text-align:center">
+        <audio controls style="width:100%;max-width:500px;border-radius:12px;box-shadow:var(--shadow);margin:1rem 0">
+          <source src="podcast-conta-tec.m4a" type="audio/mp4">
+          Tu navegador no soporta la reproducción de audio.
+        </audio>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:.5rem">Podcast "Conoce FESNA" · Contaduría Pública · FESNA</p>
+      </div>
+
+      <div style="margin-top:1.5rem;text-align:center">
+        <a href="podcast-conta-tec.m4a" download class="btn btn-primary">⬇ Descargar podcast (M4A)</a>
+      </div>
+
+      <div class="grid3" style="margin-top:2rem">
+        <div class="media-card">
+          <h4>Temas</h4>
+          <p small>Estados financieros, presupuestos, indicadores de liquidez y normatividad tributaria intermedia.</p>
+        </div>
+        <div class="media-card">
+          <h4>Formato</h4>
+          <p small>Audio educativo en estilo podcast, optimizado para escucha en móvil y computador.</p>
+        </div>
+        <div class="media-card">
+          <h4>Producción</h4>
+          <p small>Guion y mezcla de audio asistidos por inteligencia artificial (dialogo de dos voces).</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      Recurso multimedia académico · Brayan Vanegas · FESNA · Segundo corte 2026 · UI 9/12
+    </footer>
+
+    <script>
+      function togglePod(btn){
+        const playing = btn.dataset.playing === 'true';
+        btn.dataset.playing = String(!playing);
+        btn.innerText = playing ? '▶' : '⏸';
+      }
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!doctype html>
+<!-- Portafolio Académico — Brayan Vanegas · FESNA → Diseño Sidebar Moderno -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7c3aed">
+  <meta name="description" content="Portafolio interactivo de Brayan Vanegas, estudiante FESNA. Presentación personal, actividades por programa, derechos de autor y referencias bibliográficas APA 7.">
+  <title>Brayan Vanegas — Portafolio Académico FESNA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- SIDEBAR IZQUIERDO -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark" aria-hidden="true">BV</div>
+      <div>
+        <div class="brand-name">Brayan Vanegas</div>
+        <div class="brand-role">FESNA · Estudiante</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Navegación principal">
+      <a href="#inicio" class="nav-link active" aria-current="page">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Inicio</span>
+      </a>
+      <a href="#presentacion" class="nav-link">
+        <span class="nav-icon">👤</span>
+        <span class="nav-label">Presentación</span>
+      </a>
+      <a href="#actividades" class="nav-link">
+        <span class="nav-icon">📚</span>
+        <span class="nav-label">Actividades</span>
+      </a>
+      <a href="#herramientas" class="nav-link">
+        <span class="nav-icon">🛠️</span>
+        <span class="nav-label">Herramientas</span>
+      </a>
+      <a href="#derechos" class="nav-link">
+        <span class="nav-icon">⚖️</span>
+        <span class="nav-label">Derechos de Autor</span>
+      </a>
+      <a href="#referencias" class="nav-link">
+        <span class="nav-icon">📖</span>
+        <span class="nav-label">Referencias</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-card">
+        <div class="user-avatar">BV</div>
+        <div class="user-info">
+          <div class="user-name">Brayan Vanegas</div>
+          <div class="user-status">Portafolio · 2026</div>
+        </div>
+      </div>
+      <div class="sidebar-hint">Desplázate para explorar</div>
+    </div>
+  </aside>
+
+  <!-- BOTÓN MENÚ MÓVIL -->
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido" class="main-content">
+
+    <!-- HERO -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <div class="hero-kicker">
+          <span class="dot"></span>
+          <span>PORTAFOLIO ACADÉMICO · SEGUNDO CORTE · 2026</span>
+        </div>
+        <h1 id="hero-title">Mi aprendizaje,<br><span>mi portafolio.</span></h1>
+        <p class="lede">Sitio web interactivo que funciona como portafolio digital. Aquí documento y analizo las actividades y proyectos desarrollados durante el semestre, demostrando el dominio técnico, conceptual y procedimental adquirido en la Fundación de Educación Superior Nueva América.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">6</span>
+            <span class="stat-label">programas académicos</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">12</span>
+            <span class="stat-label">actividades con IA</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">1</span>
+            <span class="stat-label">portafolio digital</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a class="button primary" href="#presentacion">Conoce mi presentación</a>
+          <a class="button outline" href="#actividades">Ver actividades asignadas</a>
+        </div>
+      </div>
+      <div class="hero-art" role="img" aria-label="Diseño abstracto moderno">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="card-preview">
+          <div class="card-tag">Presentación</div>
+          <div class="card-title">Brayan Vanegas</div>
+          <div class="card-sub">Estudiante · FESNA</div>
+          <div class="chip-row">
+            <span class="chip chip-html">HTML5</span><span class="chip chip-css">CSS3</span><span class="chip chip-js">JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENTACIÓN -->
+    <section class="section" id="presentacion" aria-labelledby="intro-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">01 / Introducción y Presentación Personal</span>
+          <h2 id="intro-title">¿Quién soy y para qué sirve esta página?</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="intro-grid">
+          <div class="profile-card">
+            <div class="avatar">BV</div>
+            <h3>Brayan Vanegas</h3>
+            <p class="subtitle">Estudiante · Fundación de Educación Superior Nueva América (FESNA)</p>
+            <table class="perfil">
+              <tr><th>Nombre</th><td>Brayan Vanegas</td></tr>
+              <tr><th>Programa académico</th><td>Ingeniería de Sistemas (estudiante FESNA)</td></tr>
+              <tr><th>Objetivos de aprendizaje</th><td>Consolidar, documentar y analizar actividades y proyectos del curso, demostrando dominio técnico, conceptual y procedimental adquirido.</td></tr>
+            </table>
+          </div>
+          <div class="purpose-card">
+            <h3><span class="num">01</span> Finalidad de esta página web</h3>
+            <p>Este sitio funciona como un <strong>portafolio digital interactivo</strong>. Su propósito es reunir, de forma organizada y accesible, todas las actividades y proyectos desarrollados durante el semestre, permitiendo revisar el proceso de aprendizaje, los productos entregados y los recursos utilizados.</p>
+            <h3><span class="num">02</span> Resumen del recorrido del semestre</h3>
+            <p>Durante el curso se trabajó el diseño y publicación de un sitio web interactivo como portafolio digital. Se avanzó desde la presentación personal y definición del propósito del sitio, pasando por la galería de módulos de actividades desarrolladas (descripción, contexto, proceso de desarrollo y herramientas utilizadas), el uso responsable de recursos visuales respetando derechos de autor, y culminó con la sustentación teórica y las referencias bibliográficas en formato APA 7.ª edición.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERRAMIENTAS -->
+    <section class="section herramientas" id="herramientas" aria-labelledby="herramientas-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Herramientas y Tecnologías</span>
+          <h2 id="herramientas-title">¿Con qué construí este portafolio?</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="herramientas-grid">
+          <div class="herramienta-card">
+            <span class="icon">🌐</span>
+            <h3>HTML5</h3>
+            <p>Estructura semántica y accesible de toda la página.</p>
+          </div>
+          <div class="herramienta-card">
+            <span class="icon">🎨</span>
+            <h3>CSS3</h3>
+            <p>Diseño moderno, adaptable y con modo claro/oscuro.</p>
+          </div>
+          <div class="herramienta-card">
+            <span class="icon">⚡</span>
+            <h3>JavaScript</h3>
+            <p>Interactividad: menú lateral, filtros y ventanas emergentes.</p>
+          </div>
+          <div class="herramienta-card">
+            <span class="icon">🤖</span>
+            <h3>IA Generativa</h3>
+            <p>Apoyo en guiones, prompts y organización de contenidos.</p>
+          </div>
+          <div class="herramienta-card">
+            <span class="icon">💻</span>
+            <h3>VS Code</h3>
+            <p>Entorno de desarrollo para escribir y probar el código.</p>
+          </div>
+          <div class="herramienta-card">
+            <span class="icon">🌍</span>
+            <h3>GitHub Pages</h3>
+            <p>Publicación gratuita del sitio web en internet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section class="section" id="habilidades" aria-labelledby="habilidades-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">03 / Habilidades Técnicas</span>
+          <h2 id="habilidades-title">Mis competencias digitales</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-name">HTML5 & CSS3</span>
+              <span class="skill-percent">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:95%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:85%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-name">IA Generativa</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:90%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-name">Edición de Video</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:80%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-name">Podcast & Audio</span>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:75%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-name">Diseño Web</span>
+              <span class="skill-percent">88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width:88%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVIDADES -->
+    <section class="section actividades" id="actividades" aria-labelledby="actividades-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">02 / Galería de Actividades Desarrolladas</span>
+          <h2 id="actividades-title">Actividades asignadas por programa académico</h2>
+          <p class="actividades-intro">Este examen evalúa la aplicación de herramientas de Inteligencia Artificial en la comunicación institucional y estratégica de la gestión empresarial. Cada carrera tiene dos actividades asignadas.</p>
+          <div class="divider"></div>
+        </div>
+        <div class="filtros">
+          <button class="filtro activo" data-filtro="todos">Todos</button>
+          <button class="filtro" data-filtro="administracion">Administración</button>
+          <button class="filtro" data-filtro="contaduria">Contaduría</button>
+        </div>
+        <div class="carreras-grid" id="carreras-grid">
+          <!-- Administración -->
+          <article class="carrera-card" data-area="administracion">
+            <span class="carrera-area">Administración de Empresas</span>
+            <h3>Técnica Profesional en Procesos Administrativos Empresariales</h3>
+            <p class="nivel">Nivel: Técnica Profesional</p>
+            <p class="snies">SNIES · Presencial: 111383 | Virtual: 111384</p>
+            <div class="actividades-lista">
+              <a href="multimedia/admin-tp-video.html" class="btn-actividad">Video explicativo con IA</a>
+              <a href="multimedia/admin-tp-infografia.html" class="btn-actividad">Infografía institucional con IA</a>
+            </div>
+            <p class="enfoque">Explicación paso a paso de procesos operativos empresariales (archivo, flujo de documentos, atención al cliente) e infografías sintéticas sobre la estructura organizacional.</p>
+          </article>
+          <article class="carrera-card" data-area="administracion">
+            <span class="carrera-area">Administración de Empresas</span>
+            <h3>Tecnología en Gestión Administrativa</h3>
+            <p class="nivel">Nivel: Tecnología</p>
+            <p class="snies">SNIES · Presencial: 111385 | Virtual: 111386</p>
+            <div class="actividades-lista">
+              <a href="multimedia/admin-tec-reel.html" class="btn-actividad">Reel promocional con IA</a>
+              <a href="multimedia/admin-tec-spot.html" class="btn-actividad">Spot publicitario con voz IA</a>
+            </div>
+            <p class="enfoque">Promoción del programa y dinamización de procesos intermedios (supervisión, gestión del talento humano, logística) mediante piezas dinámicas y locución sintética.</p>
+          </article>
+          <article class="carrera-card" data-area="administracion">
+            <span class="carrera-area">Administración de Empresas</span>
+            <h3>Administración de Empresas</h3>
+            <p class="nivel">Nivel: Profesional</p>
+            <p class="snies">SNIES · Presencial: 111357 | Virtual: 111370</p>
+            <div class="actividades-lista">
+              <a href="multimedia/admin-prof-video.html" class="btn-actividad">Video institucional generado con IA</a>
+              <a href="multimedia/admin-prof-motion.html" class="btn-actividad">Motion Graphics inteligente</a>
+            </div>
+            <p class="enfoque">Comunicación estratégica, visión directiva, liderazgo, responsabilidad social empresarial y planes de negocio visualizados con gráficos animados generados por IA.</p>
+          </article>
+          <!-- Contaduría -->
+          <article class="carrera-card" data-area="contaduria">
+            <span class="carrera-area">Contaduría Pública</span>
+            <h3>Técnica Profesional en Procesos Contables</h3>
+            <p class="nivel">Nivel: Técnica Profesional</p>
+            <p class="snies">SNIES · Presencial: 111389 | Virtual: 111390</p>
+            <div class="actividades-lista">
+              <a href="multimedia/conta-tp-reels.html" class="btn-actividad">Serie de Reels con guion IA</a>
+              <a href="multimedia/conta-tp-cuña.html" class="btn-actividad">Cuña radial generada con IA</a>
+            </div>
+            <p class="enfoque">Cápsulas cortas con tips sobre registro de asientos contables, manejo de caja menor, archivo tributario y liquidación básica de nómina.</p>
+          </article>
+          <article class="carrera-card" data-area="contaduria">
+            <span class="carrera-area">Contaduría Pública</span>
+            <h3>Tecnología en Gestión Contable y Financiera</h3>
+            <p class="nivel">Nivel: Tecnología</p>
+            <p class="snies">SNIES · Presencial: 111391 | Virtual: 111392</p>
+            <div class="actividades-lista">
+              <a href="multimedia/conta-tec-podcast.html" class="btn-actividad">Podcast "Conoce FESNA" con IA</a>
+              <a href="multimedia/conta-tec-animacion.html" class="btn-actividad">Animación 2D asistida por IA</a>
+            </div>
+            <p class="enfoque">Exposición de análisis de estados financieros, presupuestos, indicadores de liquidez y normatividad tributaria intermedia de forma didáctica.</p>
+          </article>
+          <article class="carrera-card" data-area="contaduria">
+            <span class="carrera-area">Contaduría Pública</span>
+            <h3>Contaduría Pública</h3>
+            <p class="nivel">Nivel: Profesional</p>
+            <p class="snies">SNIES · Presencial: 111387 | Virtual: 111388</p>
+            <div class="actividades-lista">
+              <a href="multimedia/conta-prof-avatar.html" class="btn-actividad">Testimonio recreado con avatar IA</a>
+              <a href="multimedia/conta-prof-podcast.html" class="btn-actividad">Podcast institucional asistido por IA</a>
+            </div>
+            <p class="enfoque">Normas Internacionales (NIIF/NIC), auditoría, revisoría fiscal, ética profesional y análisis macrofinanciero desde la perspectiva de egresados o expertos virtuales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DERECHOS -->
+    <section class="section derechos" id="derechos" aria-labelledby="derechos-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">03 / Uso Responsable de Recursos Visuales</span>
+          <h2 id="derechos-title">Derechos de Autor</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="derechos-grid">
+          <article>
+            <span class="chip derecho-chip">✓</span>
+            <h3>Propiedad intelectual</h3>
+            <p>Todas las imágenes e ilustraciones implementadas cumplen estrictamente con las normativas de propiedad intelectual.</p>
+          </article>
+          <article>
+            <span class="chip derecho-chip">✓</span>
+            <h3>Autoría indicada</h3>
+            <p>Si son de autoría propia, se indica explícitamente en el pie de foto o sección de créditos.</p>
+          </article>
+          <article>
+            <span class="chip derecho-chip">✓</span>
+            <h3>Licencias libres</h3>
+            <p>Si son de terceros, deben provenir de bancos de imágenes de dominio público o bajo licencias libres (como Creative Commons), incluyendo atribución, enlace a la fuente original y tipo de licencia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCIAS -->
+    <section class="section referencias" id="referencias" aria-labelledby="referencias-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">04 / Sustentación Teórica y Referencias Bibliográficas</span>
+          <h2 id="referencias-title">Fuentes y bibliografía</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="referencias-grid">
+          <article>
+            <span class="chip ref-chip">F</span>
+            <h3>Fundamentación</h3>
+            <p>El contenido del sitio está respaldado por lecturas, autores o conceptos clave del curso, incluyendo los lineamientos del examen de segundo corte y los materiales suministrados por FESNA.</p>
+          </article>
+          <article>
+            <span class="chip ref-chip">B</span>
+            <h3>Bibliografía (APA 7.ª edición)</h3>
+            <ol class="apa">
+              <li>Fundación de Educación Superior Nueva América. (s. f.). <em>Examen segundo corte: campaña publicitaria FESNA</em> [Documento del curso suministrado en PDF].</li>
+              <li>American Psychological Association. (2020). <em>Publication manual of the American Psychological Association</em> (7th ed.). APA.</li>
+              <li>Creative Commons. (s. f.). <em>About CC licenses.</em> https://creativecommons.org/share-your-work/cclicenses/</li>
+              <li>World Wide Web Consortium. (2023). <em>Web Content Accessibility Guidelines (WCAG) 2.2.</em> https://www.w3.org/TR/WCAG22/</li>
+              <li>UNESCO. (2023). <em>Guidance for generative AI in education and research.</em> https://unesdoc.unesco.org/ark:/48223/pf0000386693</li>
+              <li>ByteDance. (2026). <em>CapCut</em> (Versión de escritorio / web) [Software de edición y generación de video con IA]. https://www.capcut.com/</li>
+              <li>ElevenLabs Inc. (2026). <em>ElevenLabs: Generador de voz con IA y conversión de texto a voz</em> (Modelo Eleven v4) [Herramienta de software con IA]. https://elevenlabs.io/</li>
+              <li>Google LLC. (2026). <em>NotebookLM</em> [Modelo de lenguaje y herramienta de resumen y síntesis de audio multimodal con IA]. https://notebooklm.google/</li>
+              <li>HeyGen. (2026). <em>HeyGen: Generador de video con avatares IA hiperrealistas</em> [Plataforma de software]. https://www.heygen.com/</li>
+              <li>Ministerio de Educación Nacional de Colombia. (s. f.). <em>Sistema Nacional de Información de la Educación Superior (SNIES)</em> [Base de datos en línea]. https://snies.mineducacion.gov.co/</li>
+            </ol>
+          </article>
+          <article>
+            <span class="chip ref-chip">T</span>
+            <h3>Herramientas de Inteligencia Artificial y Software Utilizados</h3>
+            <ul class="herramientas-ia">
+              <li><strong>NotebookLM (Google LLC)</strong><br>Uso: Análisis de fuentes documentales, síntesis pedagógica, generación automatizada de podcasts institucionales ("Conoce FESNA") y estructuración temática de cápsulas educativas.</li>
+              <li><strong>ElevenLabs (ElevenLabs Inc.)</strong><br>Uso: Síntesis de voz neural hiperrealista en español latino (Text-to-Speech) para la producción de la cuña radial publicitaria y diseño sonoro.</li>
+              <li><strong>HeyGen (HeyGen)</strong><br>Uso: Creación, sincronización labial (Lip-sync) y renderizado de avatar digital hiperrealista para el testimonio institucional de egresados de Contaduría Pública.</li>
+              <li><strong>CapCut / Editores Multimedia Asistidos por IA (ByteDance)</strong><br>Uso: Edición visual dinámica, animación de subtítulos automáticos, composición de video en formato vertical (9:16) para Reels institucionales y mezcla de audio con cortinillas.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand-mark" aria-hidden="true">BV</div>
+          <div>
+            <strong>Brayan Vanegas</strong>
+            <span>Estudiante · FESNA</span>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Portafolio académico · Segundo corte · 2026</p>
+          <p>Diseñado y desarrollado por Brayan Vanegas</p>
+        </div>
+        <a href="#inicio" class="footer-top">Volver arriba ↑</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-contenido">
+      <button class="modal-cerrar" aria-label="Cerrar">&times;</button>
+      <div class="modal-cuerpo" id="modal-cuerpo"></div>
+    </div>
+  </div>
+
+</body>
+</html>

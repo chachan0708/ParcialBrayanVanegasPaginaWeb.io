@@ -1,0 +1,312 @@
+/* ============ Recursos Multimedia — Brayan Vanegas · FESNA ============
+   12 actividades, cada una con una UI totalmente diferente.
+   Colores, tipografía, layout y animación únicos por recurso. ============ */
+
+:root{
+  --ink:#0f172a;
+  --muted:#64748b;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --border:#e2e8f0;
+  --shadow:0 10px 30px -10px rgba(14,24,42,0.12);
+  --radius:16px;
+  --transition:0.4s ease;
+  --font-head:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-body:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.6
+}
+a{color:inherit;text-decoration:none}
+
+/* ---------- Botón cerrar módulo (X) ---------- */
+.btn-cerrar{
+  position:fixed;top:1rem;right:1rem;z-index:200;
+  width:44px;height:44px;background:var(--ink);color:#fff;
+  border:none;border-radius:50%;font-size:1.5rem;line-height:1;
+  cursor:pointer;box-shadow:var(--shadow);transition:transform var(--transition),background var(--transition);
+  display:grid;place-items:center
+}
+.btn-cerrar:hover{background:var(--brand);transform:scale(1.1)}
+
+/* ---------- Back link ---------- */
+.back-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.6rem 1rem;background:var(--ink);color:#fff;border-radius:8px;
+  font-weight:700;font-size:.9rem;box-shadow:var(--shadow);
+  margin:1rem;transition:transform var(--transition),opacity var(--transition)
+}
+.back-link:hover{transform:translateX(-4px);opacity:.9}
+
+/* ---------- Page shell ---------- */
+.page-shell{
+  max-width:1100px;margin:0 auto;padding:2rem 1.25rem 4rem
+}
+.page-header{
+  border-radius:var(--radius);padding:2.5rem 2rem;color:#fff;
+  box-shadow:var(--shadow);margin-bottom:2rem;position:relative;overflow:hidden
+}
+.page-header::after{
+  content:"";position:absolute;inset:-20%;background:inherit;opacity:.35;filter:blur(40px);z-index:0
+}
+.page-header > *{position:relative;z-index:1}
+.page-kicker{
+  font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  opacity:.9;margin-bottom:.5rem;display:block
+}
+.page-title{font-family:var(--font-head);font-size:clamp(1.5rem,2.5vw,2.25rem);line-height:1.15;margin:0 0 .5rem}
+.page-sub{opacity:.9;font-size:1rem;margin:0}
+
+/* ---------- Section ---------- */
+.media-section{margin-bottom:3rem}
+.media-section h3{
+  font-family:var(--font-head);font-size:1.25rem;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem
+}
+.media-section p{color:var(--muted);font-size:.95rem;margin-bottom:.75rem}
+
+/* ---------- Grid ---------- */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+
+/* ---------- Card ---------- */
+.media-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.5rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.75rem;
+  transition:transform var(--transition),border-color var(--transition)
+}
+.media-card:hover{transform:translateY(-4px)}
+.media-card .tag{
+  font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  padding:.2rem .6rem;border-radius:10px;display:inline-block
+}
+.media-card h4{font-family:var(--font-head);font-size:1rem;margin:0 0 .4rem}
+.media-card p small{font-size:.8rem;color:var(--muted);display:block;margin-top:.3rem}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.7rem 1.2rem;border-radius:10px;border:none;font-weight:700;font-size:.9rem;
+  cursor:pointer;transition:transform var(--transition),opacity var(--transition)
+}
+.btn:hover{transform:translateY(-2px);opacity:.9}
+.btn:active{transform:translateY(0)}
+
+/* ========================================================================
+   TEMA 1 — admin-tp-video : Video explicativo (Teal + Ámbar)
+   ======================================================================== */
+.t1{--c:#0f766e;--c2:#059669;--acc:#d97706;--bg:#ecfdf5}
+.t1 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t1 .btn-primary{background:var(--acc);color:#fff}
+.t1 .tag-video{background:rgba(15,118,110,.15);color:var(--c)}
+.t1 .media-card{border-top:4px solid var(--c)}
+.t1 .step{display:flex;gap:.75rem;align-items:flex-start}
+.t1 .step-num{
+  flex:0 0 auto;width:32px;height:32px;background:var(--c);color:#fff;border-radius:50%;
+  display:grid;place-items:center;font-weight:800;font-size:1rem
+}
+
+/* ========================================================================
+   TEMA 2 — admin-tp-infografia : Infografía institucional (Esmeralda + Oro)
+   ======================================================================== */
+.t2{--c:#059669;--c2:#047857;--acc:#b45309;--bg:#f0fdf4}
+.t2 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t2 .btn-primary{background:var(--acc);color:#fff}
+.t2 .tag-info{background:rgba(5,150,105,.15);color:var(--c)}
+.t2 .media-card{border-top:4px solid var(--c)}
+.t2 .org-box{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1rem;text-align:center;position:relative
+}
+.t2 .org-line{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  width:2px;height:28px;background:var(--c)
+}
+
+/* ========================================================================
+   TEMA 3 — admin-tec-reel : Reel promocional (Rosa + Cian, vertical)
+   ======================================================================== */
+.t3{--c:#db2777;--c2:#0891b2;--acc:#22d3ee;--bg:#fdf2f8}
+.t3 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t3 .btn-primary{background:var(--acc);color:#0f172a}
+.t3 .tag-reel{background:rgba(219,39,119,.15);color:var(--c)}
+.t3 .media-card{border-top:4px solid var(--c);border-radius:20px}
+.t3 .reel-frame{
+  aspect-ratio:9/16;background:#000;border-radius:16px;overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;
+  font-size:clamp(1rem,2vw,1.5rem);margin-bottom:.75rem
+}
+.t3 .reel-frame::after{
+  content:"REEL";position:absolute;top:1rem;left:1rem;background:rgba(0,0,0,.5);
+  padding:.2rem .6rem;border-radius:6px;font-size:.75rem;letter-spacing:.1em
+}
+
+/* ========================================================================
+   TEMA 4 — admin-tec-spot : Spot publicitario (Rojo oscuro + Neón)
+   ======================================================================== */
+.t4{--c:#7f1d1d;--c2:#b91c1c;--acc:#22d3ee;--bg:#fef2f2}
+.t4 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t4 .btn-primary{background:var(--acc);color:#0f172a}
+.t4 .tag-spot{background:rgba(127,29,29,.15);color:var(--c)}
+.t4 .media-card{border-top:4px solid var(--c)}
+.t4 .wave{display:flex;align-items:center;gap:.25rem;height:40px;margin:1rem 0}
+.t4 .wave-bar{
+  flex:1;height:100%;background:var(--acc);border-radius:2px;animation:wave 1.2s ease-in-out infinite
+}
+@keyframes wave{
+  0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1.4)}
+}
+.t4 .wave-bar:nth-child(2){animation-delay:.2s}
+.t4 .wave-bar:nth-child(3){animation-delay:.4s}
+.t4 .wave-bar:nth-child(4){animation-delay:.6s}
+.t4 .wave-bar:nth-child(5){animation-delay:.8s}
+
+/* ========================================================================
+   TEMA 5 — admin-prof-video : Video institucional (Navy + Plata)
+   ======================================================================== */
+.t5{--c:#1e3a8a;--c2:#1e40af;--acc:#94a3b8;--bg:#eff6ff}
+.t5 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t5 .btn-primary{background:var(--c2);color:#fff}
+.t5 .tag-inst{background:rgba(30,58,138,.15);color:var(--c)}
+.t5 .media-card{border-top:4px solid var(--c)}
+.t5 .badge{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:.35rem .8rem;border-radius:20px;background:var(--c2);color:#fff;display:inline-block}
+
+/* ========================================================================
+   TEMA 6 — admin-prof-motion : Motion Graphics (Púrpura + Lima)
+   ======================================================================== */
+.t6{--c:#7c3aed;--c2:#a855f7;--acc:#84cc16;--bg:#faf5ff}
+.t6 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t6 .btn-primary{background:var(--acc);color:#0f172a}
+.t6 .tag-motion{background:rgba(124,58,237,.15);color:var(--c)}
+.t6 .media-card{border-top:4px solid var(--c)}
+.t6 .motion-box{
+  width:60px;height:60px;border-radius:12px;background:var(--acc);margin:.75rem 0;
+  animation:bounce 2s ease-in-out infinite
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0)scale(1)}50%{transform:translateY(-16px)scale(1.1)}
+}
+.t6 .shape{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--c),var(--c2));
+  animation:spin 6s linear infinite;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ========================================================================
+   TEMA 7 — conta-tp-reels : Serie de Reels (Naranja + Oscuro)
+   ======================================================================== */
+.t7{--c:#c2410c;--c2:#ea580c;--acc:#f59e0b;--bg:#fff7ed}
+.t7 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t7 .btn-primary{background:var(--acc);color:#0f172a}
+.t7 .tag-reels{background:rgba(194,65,12,.15);color:var(--c)}
+.t7 .media-card{border-top:4px solid var(--c)}
+.t7 .reel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.75rem}
+.t7 .reel-cell{
+  aspect-ratio:9/16;background:#111;border-radius:12px;overflow:hidden;position:relative;
+  display:flex;align-items:flex-end;padding:.5rem;color:#fff
+}
+.t7 .reel-cell::after{
+  content:attr(data-tip);position:absolute;bottom:.5rem;left:.5rem;right:.5rem;
+  background:rgba(0,0,0,.6);padding:.35rem;border-radius:6px;font-size:.75rem
+}
+
+/* ========================================================================
+   TEMA 8 — conta-tp-cuña : Cuña radial (Marrón + Crema, estilo radio)
+   ======================================================================== */
+.t8{--c:#78350f;--c2:#9a3412;--acc:#d97706;--bg:#fffbeb}
+.t8 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t8 .btn-primary{background:var(--acc);color:#0f172a}
+.t8 .tag-cuna{background:rgba(120,53,15,.15);color:var(--c)}
+.t8 .media-card{border-top:4px solid var(--c)}
+.t8 .mic{
+  width:64px;height:80px;background:var(--c);border-radius:8px 8px 32px 32px;
+  margin:0 auto 1rem;position:relative
+}
+.t8 .mic::after{
+  content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  width:28px;height:14px;background:#334155;border-radius:6px 6px 0 0
+}
+
+/* ========================================================================
+   TEMA 9 — conta-tec-podcast : Podcast "Conoce FESNA" (Teal + Coral)
+   ======================================================================== */
+.t9{--c:#0f766e;--c2:#115e59;--acc:#fb7185;--bg:#ecfdf5}
+.t9 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t9 .btn-primary{background:var(--acc);color:#fff}
+.t9 .tag-pod{background:rgba(15,118,110,.15);color:var(--c)}
+.t9 .media-card{border-top:4px solid var(--c)}
+.t9 .player{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:1.5rem;display:flex;gap:1rem;align-items:center
+}
+.t9 .art{flex:0 0 auto;width:72px;height:72px;border-radius:10px;background:linear-gradient(135deg,var(--c),var(--c2));display:grid;place-items:center;color:#fff;font-weight:800}
+.t9 .play{width:44px;height:44px;border-radius:50%;background:var(--c);color:#fff;border:none;display:grid;place-items:center;cursor:pointer;font-size:1.2rem;margin-left:auto}
+
+/* ========================================================================
+   TEMA 10 — conta-tec-animacion : Animación 2D (Azul + Blanco)
+   ======================================================================== */
+.t10{--c:#1d4ed8;--c2:#2563eb;--acc:#fbbf24;--bg:#eff6ff}
+.t10 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t10 .btn-primary{background:var(--c2);color:#fff}
+.t10 .tag-anim{background:rgba(29,78,216,.15);color:var(--c)}
+.t10 .media-card{border-top:4px solid var(--c)}
+.t10 .stage{
+  width:100%;max-width:360px;height:220px;background:#e0f2fe;border:2px dashed var(--c);
+  border-radius:14px;margin:1rem auto 0;position:relative;overflow:hidden
+}
+.t10 .sun{width:48px;height:48px;background:var(--acc);border-radius:50%;
+  position:absolute;top:20px;right:20px;animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.2);opacity:1}
+}
+.t10 .cloud{
+  position:absolute;background:#bfdbfe;border-radius:40px;padding:8px 14px;font-size:.8rem;color:#1e3a8a;
+  animation:float 4s ease-in-out infinite
+}
+.t10 .cloud:nth-child(3){top:30px;left:40px;animation-delay:0s}
+.t10 .cloud:nth-child(4){top:90px;left:160px;animation-delay:1.5s}
+@keyframes float{
+  0%,100%{transform:translateX(0)}50%{transform:translateX(20px)}
+}
+
+/* ========================================================================
+   TEMA 11 — conta-prof-avatar : Testimonio avatar (Pizarra + Púrpura)
+   ======================================================================== */
+.t11{--c:#475569;--c2:#6366f1;--acc:#a855f7;--bg:#f1f5f9}
+.t11 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t11 .btn-primary{background:var(--acc);color:#fff}
+.t11 .tag-avatar{background:rgba(71,85,105,.15);color:var(--c)}
+.t11 .media-card{border-top:4px solid var(--c)}
+.t11 .avatar-frame{
+  width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--c2),var(--acc));
+  margin:0 auto 1rem;display:grid;place-items:center;color:#fff;font-weight:900;font-size:2rem;box-shadow:var(--shadow)
+}
+.t11 .quote{font-style:italic;font-size:1.1rem;color:var(--ink);margin:1rem 0;padding-left:1rem;border-left:4px solid var(--c2)}
+.t11 .sig{font-size:.85rem;color:var(--muted);font-weight:600}
+
+/* ========================================================================
+   TEMA 12 — conta-prof-podcast : Podcast institucional (Carbón + Oro)
+   ======================================================================== */
+.t12{--c:#0f172a;--c2:#334155;--acc:#b45309;--bg:#fafafa}
+.t12 .page-header{background:linear-gradient(135deg,var(--c),var(--c2))}
+.t12 .btn-primary{background:var(--acc);color:#fff}
+.t12 .tag-prof{background:rgba(15,23,42,.15);color:var(--c)}
+.t12 .media-card{border-top:4px solid var(--c)}
+.t12 .chip-row{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.t12 .chip{font-size:.8rem;padding:.35rem .8rem;border-radius:10px;background:var(--card);
+  border:1px solid var(--border);color:var(--muted)}
+
+/* ---------- Footer ---------- */
+.page-footer{
+  margin-top:3rem;padding:2rem 1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:640px){
+  .page-shell{padding:1.5rem 1rem 3rem}
+  .page-header{padding:2rem 1.25rem}
+  .grid3,.grid2{grid-template-columns:1fr}
+  .t9 .player{flex-direction:column;align-items:flex-start}
+  .t9 .play{margin-left:0}
+}
