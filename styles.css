@@ -395,3 +395,9 @@ h2{font-size:clamp(1.8rem,2.8vw,2.2rem);margin-bottom:.5rem;letter-spacing:-0.02
 }
 .herramientas-ia li strong{color:var(--brand)}
 .herramientas-ia li br{margin-bottom:.2rem}
+
+/* Destello al volver a la última actividad visitada */
+.carrera-card.destello{
+  box-shadow:0 0 0 3px var(--brand),0 18px 45px rgba(253,83,30,.28);
+  transition:box-shadow .5s ease
+}

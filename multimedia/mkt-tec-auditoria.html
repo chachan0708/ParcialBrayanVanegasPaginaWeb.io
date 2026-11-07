@@ -1,0 +1,235 @@
+<!doctype html>
+<!-- Recurso multimedia — Auditoría y simulación de campañas de pauta digital asistidas por IA (interactivo) -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auditoría de campañas de pauta digital con IA · Brayan Vanegas · FESNA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="t4">
+  <a href="../index.html#actividades" class="back-link">← Volver al portafolio</a>
+  <a href="../index.html#actividades" class="btn-cerrar" aria-label="Cerrar módulo">×</a>
+
+  <div class="page-shell">
+    <header class="page-header">
+      <span class="page-kicker">Marketing y Publicidad · Tecnología en Gestión Comercial y Publicidad</span>
+      <h1 class="page-title">Auditoría y simulación de campañas de pauta digital</h1>
+      <p class="page-sub">Auditoría de campañas digitales y análisis de métricas de rendimiento (KPI, CTR, ROAS) asistidos por IA para la campaña FESNA.</p>
+    </header>
+
+    <style>
+      #audit-app{
+        width:100%;max-width:64rem;margin:2rem auto;background:#0f172a;color:#e2e8f0;
+        border-radius:1rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.5);border:1px solid #1e293b;
+        font-family:'Poppins','Segoe UI',system-ui,sans-serif;padding:1.5rem;box-sizing:border-box;
+      }
+      #audit-app .au-aviso{
+        font-size:.72rem;color:#fbbf24;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);
+        border-radius:.5rem;padding:.5rem .8rem;margin-bottom:1.25rem;line-height:1.5;
+      }
+      #audit-app .au-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:1.5rem;}
+      @media(min-width:760px){#audit-app .au-kpis{grid-template-columns:repeat(4,1fr);}}
+      #audit-app .au-kpi{background:#020617;border:1px solid #1e293b;border-radius:.75rem;padding:.9rem 1rem;}
+      #audit-app .au-kpi-val{font-size:1.35rem;font-weight:900;color:#fff;line-height:1.2;}
+      #audit-app .au-kpi-lbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#94a3b8;margin-top:.2rem;}
+      #audit-app .au-kpi-dif{font-size:.68rem;margin-top:.3rem;font-weight:700;}
+      .dif-pos{color:#34d399;} .dif-neg{color:#f87171;}
+      #audit-app .au-tabla-wrap{overflow-x:auto;background:#020617;border:1px solid #1e293b;border-radius:.75rem;}
+      #audit-app table{width:100%;border-collapse:collapse;font-size:.78rem;min-width:720px;}
+      #audit-app th{
+        text-align:left;padding:.7rem .8rem;color:#94a3b8;font-size:.65rem;font-weight:800;
+        text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid #1e293b;white-space:nowrap;
+      }
+      #audit-app td{padding:.7rem .8rem;border-bottom:1px solid rgba(30,41,59,.6);color:#e2e8f0;white-space:nowrap;}
+      #audit-app tr:last-child td{border-bottom:none;}
+      #audit-app td.canal{font-weight:700;color:#fff;}
+      #audit-app .estado{display:inline-block;padding:.15rem .55rem;border-radius:999px;font-size:.65rem;font-weight:800;}
+      .est-ok{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.4);}
+      .est-med{background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.4);}
+      .est-bad{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.45);}
+      #audit-app .au-cols{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.5rem;}
+      @media(min-width:800px){#audit-app .au-cols{grid-template-columns:1fr 1fr;}}
+      #audit-app .au-panel{background:#020617;border:1px solid #1e293b;border-radius:.75rem;padding:1.1rem 1.25rem;}
+      #audit-app .au-panel h4{margin:0 0 .7rem;font-size:.9rem;color:#fff;}
+      #audit-app .au-panel ul{margin:0;padding-left:1.1rem;}
+      #audit-app .au-panel li{font-size:.78rem;color:#cbd5e1;line-height:1.7;margin-bottom:.35rem;}
+      #audit-app .au-panel li b{color:#fff;}
+      #audit-app .li-ok b{color:#34d399;}
+      #audit-app .li-bad b{color:#f87171;}
+      #audit-app .li-med b{color:#fbbf24;}
+      #audit-app .au-foot{margin-top:1.5rem;text-align:center;font-size:12px;color:#64748b;}
+      /* Filtro de canal (interactividad) */
+      #audit-app .au-filtros{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem;}
+      #audit-app .au-filtro{
+        background:rgba(2,6,23,.6);border:1px solid #1e293b;color:#cbd5e1;border-radius:999px;
+        padding:.35rem .9rem;font-size:.72rem;font-weight:700;cursor:pointer;transition:all .15s;font-family:inherit;
+      }
+      #audit-app .au-filtro:hover{border-color:#475569;}
+      #audit-app .au-filtro.activa{background:#1e293b;border-color:#FD531E;color:#fff;}
+    </style>
+
+    <section class="media-section">
+      <h3><span class="tag">AUDITORÍA</span> Panel de rendimiento de la pauta digital</h3>
+      <p>Auditoría con IA del rendimiento por canal de la pauta digital de la campaña: resumen ejecutivo de KPIs, comparación contra benchmarks del sector educación y plan de optimización.</p>
+
+      <div id="audit-app">
+        <div class="au-aviso" style="color:#fbbf24">⚠️ <strong>Simulación académica:</strong> los datos de campaña presentados son ficticios y se usan únicamente para demostrar el proceso de auditoría con IA. Los datos oficiales de FESNA siempre provienen de sus canales institucionales.</div>
+
+        <!-- KPIs globales -->
+        <div class="au-kpis">
+          <div class="au-kpi">
+            <div class="au-kpi-val">412.400</div>
+            <div class="au-kpi-lbl">Impresiones totales</div>
+            <div class="au-kpi-dif dif-pos">▲ 12 % vs. meta simulada</div>
+          </div>
+          <div class="au-kpi">
+            <div class="au-kpi-val">7.840</div>
+            <div class="au-kpi-lbl">Clics</div>
+            <div class="au-kpi-dif dif-pos">▲ 8 % vs. meta simulada</div>
+          </div>
+          <div class="au-kpi">
+            <div class="au-kpi-val">1,90 %</div>
+            <div class="au-kpi-lbl">CTR promedio ponderado</div>
+            <div class="au-kpi-dif dif-neg">▼ 0,4 pp vs. benchmark (2,3 %)</div>
+          </div>
+          <div class="au-kpi">
+            <div class="au-kpi-val">3,4x</div>
+            <div class="au-kpi-lbl">ROAS simulado de la mezcla</div>
+            <div class="au-kpi-dif dif-pos">▲ 0,6x vs. meta 2,8x</div>
+          </div>
+        </div>
+
+        <!-- Filtro por canal -->
+        <div class="au-filtros" id="au-filtros">
+          <button class="au-filtro activa" data-c="todos">Todos los canales</button>
+          <button class="au-filtro" data-c="instagram">Instagram</button>
+          <button class="au-filtro" data-c="tiktok">TikTok</button>
+          <button class="au-filtro" data-c="facebook">Facebook</button>
+          <button class="au-filtro" data-c="whatsapp">WhatsApp</button>
+        </div>
+
+        <!-- Tabla de auditoría por canal -->
+        <div class="au-tabla-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Canal / campaña</th>
+                <th>Objetivo</th>
+                <th>Impresiones</th>
+                <th>Clics</th>
+                <th>CTR</th>
+                <th>CPC USD</th>
+                <th>Conv.</th>
+                <th>CPA USD</th>
+                <th>ROAS</th>
+                <th>Diagnóstico</th>
+              </tr>
+            </thead>
+            <tbody id="au-tbody"></tbody>
+          </table>
+        </div>
+
+        <!-- Hallazgos y plan de acción -->
+        <div class="au-cols">
+          <div class="au-panel">
+            <h4>🔍 Hallazgos de la auditoría</h4>
+            <ul>
+              <li class="li-ok"><b>TikTok lidera eficiencia:</b> CTR 3,1 % sobre benchmark 2,3 % y CPA bajo; el formato video corto con gancho juvenil funciona con el buyer "Diego".</li>
+              <li class="li-bad"><b>Instagram frena la mezcla:</b> CTR 1,2 % muy por debajo del benchmark; los carruseles estáticos tienen scroll alto y el gancho se pierde en el primer segundo.</li>
+              <li class="li-med"><b>Facebook rinde con Laura:</b> CPA ligeramente sobre la meta, pero ROAS saludable: el testimonial en video trae consultas de alta calidad en WhatsApp.</li>
+              <li class="li-ok"><b>WhatsApp convierte:</b> es el canal de cierre con mejor CPA; el broadcast con mensaje personalizado duplica la tasa de respuesta del promedio simulado.</li>
+            </ul>
+          </div>
+          <div class="au-panel">
+            <h4>🛠️ Plan de optimización sugerido por IA</h4>
+            <ul>
+              <li><b>Instagram:</b> migrar carrusel estático a Reels con gancho en el segundo 1; test A/B de 3 ganchos con el mismo video base.</li>
+              <li><b>TikTok:</b> escalar presupuesto +20 % y crear una segunda variante por buyer persona (Diego y Laura) para no fatigar la audiencia.</li>
+              <li><b>Facebook:</b> retargeting con mensaje "un día de estos" hacia quienes vieron +50 % del testimonial sin preguntar.</li>
+              <li><b>WhatsApp:</b> automatizar la respuesta "INFO" del asesor virtual (chat IA) y medir conversación → consulta formal.</li>
+              <li><b>General:</b> revisar frecuencias semanales; si el CPC sube +15 % dos días seguidos, refrescar creativo antes de saturar audiencia.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="au-foot">
+          Auditoría simulada con apoyo de IA analítica · Tecnología en Gestión Comercial y Publicidad — FESNA
+        </div>
+      </div>
+
+      <div class="grid3" style="margin-top:2rem">
+        <div class="media-card">
+          <h4>Objetivo</h4>
+          <p small>Auditar y simular campañas de pauta digital con enfoque en rendimiento.</p>
+        </div>
+        <div class="media-card">
+          <h4>Enfoque</h4>
+          <p small>Análisis de métricas de rendimiento (KPIs, CTR, ROAS) y gestión práctica de campañas omnicanal.</p>
+        </div>
+        <div class="media-card">
+          <h4>Apoyo de IA</h4>
+          <p small>Analítica de IA para diagnosticar, comparar benchmarks y priorizar la optimización.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      Recurso multimedia académico · Brayan Vanegas · FESNA · Segundo corte 2026
+    </footer>
+  </div>
+</body>
+
+<script>
+(function () {
+  var filas = [
+    { id: 'tiktok', canal: 'TikTok — Reels "Aprende lo que te mueve"', obj: 'Alcance / tráfico juvenil',
+      imp: '168.900', cli: '5.240', ctr: '3,1 %', cpc: '0,19', con: '310', cpa: '1,45', roas: '4,1x',
+      estado: 'Saludable', clase: 'est-ok' },
+    { id: 'instagram', canal: 'Instagram — Carrusel estático', obj: 'Notoriedad de marca',
+      imp: '122.500', cli: '1.470', ctr: '1,2 %', cpc: '0,38', con: '95', cpa: '3,80', roas: '1,6x',
+      estado: 'Crítico', clase: 'est-bad' },
+    { id: 'facebook', canal: 'Facebook — Video testimonial', obj: 'Consideración / captación',
+      imp: '86.000', cli: '1.630', ctr: '1,9 %', cpc: '0,27', con: '205', cpa: '2,45', roas: '3,2x',
+      estado: 'Vigilancia', clase: 'est-med' },
+    { id: 'whatsapp', canal: 'WhatsApp — Broadcast + asesor IA', obj: 'Conversión / cierre',
+      imp: '35.000', cli: '1.200', ctr: '3,4 %', cpc: '0,08', con: '240', cpa: '0,95', roas: '5,8x',
+      estado: 'Saludable', clase: 'est-ok' }
+  ];
+
+  var tbody = document.getElementById('au-tbody');
+  var filtros = document.getElementById('au-filtros');
+
+  function render(canal) {
+    tbody.innerHTML = filas.filter(function (f) {
+      return canal === 'todos' || f.id === canal;
+    }).map(function (f) {
+      return '<tr>' +
+        '<td class="canal">' + f.canal + '</td>' +
+        '<td>' + f.obj + '</td>' +
+        '<td>' + f.imp + '</td>' +
+        '<td>' + f.cli + '</td>' +
+        '<td>' + f.ctr + '</td>' +
+        '<td>$' + f.cpc + '</td>' +
+        '<td>' + f.con + '</td>' +
+        '<td>$' + f.cpa + '</td>' +
+        '<td>' + f.roas + '</td>' +
+        '<td><span class="estado ' + f.clase + '">' + f.estado + '</span></td>' +
+      '</tr>';
+    }).join('');
+  }
+
+  filtros.addEventListener('click', function (e) {
+    var b = e.target.closest('.au-filtro');
+    if (!b) return;
+    filtros.querySelectorAll('.au-filtro').forEach(function (f) {
+      f.classList.toggle('activa', f === b);
+    });
+    render(b.dataset.c);
+  });
+
+  render('todos');
+})();
+</script>
+</html>

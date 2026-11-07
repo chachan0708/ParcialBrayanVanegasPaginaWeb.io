@@ -46,4 +46,32 @@
       });
     });
   });
+  /* ---- Recordar la última actividad visitada ---- */
+  const KEY_ACTIVIDAD = 'fesna-ultima-actividad';
+
+  // Asignar un id único a cada tarjeta de programa
+  document.querySelectorAll('.carrera-card').forEach(function(card, i){
+    if(!card.id) card.id = 'card-' + (card.getAttribute('data-area') || 'area') + '-' + (i + 1);
+  });
+
+  // Al entrar a una actividad, guardar de cuál tarjeta de programa salió
+  document.querySelectorAll('.actividades-lista a').forEach(function(enlace){
+    enlace.addEventListener('click', function(){
+      const card = enlace.closest('.carrera-card');
+      if(card && card.id) sessionStorage.setItem(KEY_ACTIVIDAD, card.id);
+    });
+  });
+
+  // Al volver al portafolio desde una actividad, regresar a esa misma tarjeta
+  if(sessionStorage.getItem(KEY_ACTIVIDAD) && window.location.hash === '#actividades'){
+    const destino = document.getElementById(sessionStorage.getItem(KEY_ACTIVIDAD));
+    if(destino){
+      setTimeout(function(){
+        destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        destino.classList.add('destello');
+        setTimeout(function(){ destino.classList.remove('destello'); }, 2500);
+        sessionStorage.removeItem(KEY_ACTIVIDAD);
+      }, 250);
+    }
+  }
 })();

@@ -1,0 +1,203 @@
+<!doctype html>
+<!-- Recurso multimedia — Proyecto de solución tecnológica con IA (interactivo) -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proyecto de solución tecnológica con IA · Brayan Vanegas · FESNA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="t12">
+  <a href="../index.html#actividades" class="back-link">← Volver al portafolio</a>
+  <a href="../index.html#actividades" class="btn-cerrar" aria-label="Cerrar módulo">×</a>
+
+  <div class="page-shell">
+    <header class="page-header">
+      <span class="page-kicker">Ingeniería de Sistemas · Nivel Profesional · SNIES 111393 / 111394</span>
+      <h1 class="page-title">Proyecto de solución tecnológica con IA</h1>
+      <p class="page-sub">Propuesta de solución a una problemática real mediante inteligencia artificial: prototipo, arquitectura y demostración interactiva.</p>
+    </header>
+
+    <style>
+      #proj-app{
+        width:100%;max-width:64rem;margin:2rem auto;background:#0f172a;color:#e2e8f0;
+        border-radius:1rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.5);border:1px solid #1e293b;
+        font-family:'Poppins','Segoe UI',system-ui,sans-serif;padding:1.5rem;box-sizing:border-box;
+      }
+      #proj-app h3.ps{font-size:1.05rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:.5rem;}
+      #proj-app .ps-badge{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+        background:#0A499C;color:#fff;border-radius:999px;padding:.25rem .75rem;}
+      #proj-app p.ps{font-size:.85rem;color:#cbd5e1;line-height:1.7;}
+      #proj-app .grid2{display:grid;grid-template-columns:1fr;gap:1rem;margin:1rem 0;}
+      @media(min-width:800px){#proj-app .grid2{grid-template-columns:1fr 1fr;}}
+      /* Demo interactiva */
+      #proj-app .demo{background:#020617;border:1px solid #1e293b;border-radius:.8rem;padding:1.1rem 1.25rem;margin:1rem 0;}
+      #proj-app .demo label{display:block;font-size:.72rem;font-weight:700;color:#94a3b8;margin:.6rem 0 .2rem;}
+      #proj-app .demo input[type=range]{width:100%;accent-color:#FD531E;}
+      #proj-app .demo-resultado{
+        margin-top:.9rem;padding:.8rem 1rem;border-radius:.6rem;font-size:.85rem;font-weight:700;
+        background:rgba(30,41,59,.6);border:1px solid #1e293b;color:#e2e8f0;text-align:center;
+      }
+      /* Tabla comparación */
+      #proj-app table{width:100%;border-collapse:collapse;font-size:.75rem;background:#020617;}
+      #proj-app table, #proj-app .tabla-wrap{border-radius:.6rem;overflow:hidden;border:1px solid #1e293b;}
+      #proj-app .tabla-wrap{overflow-x:auto;margin:1rem 0;}
+      #proj-app th{text-align:left;padding:.6rem .7rem;color:#94a3b8;font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #1e293b;}
+      #proj-app td{padding:.6rem .7rem;border-bottom:1px solid rgba(30,41,59,.6);color:#cbd5e1;vertical-align:top;}
+      #proj-app tr:last-child td{border-bottom:none;}
+      #proj-app td b{color:#fff;}
+      #proj-app .chip-verde{color:#34d399;font-weight:800;}
+      #proj-app .chip-amar{color:#fbbf24;font-weight:800;}
+      #proj-app .chip-rojo{color:#f87171;font-weight:800;}
+      /* Arquitectura */
+      #proj-app .arq{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0;}
+      #proj-app .arq-caja{
+        flex:1 1 140px;background:#020617;border:1px solid #1e293b;border-radius:.6rem;
+        padding:.8rem;text-align:center;font-size:.72rem;color:#cbd5e1;position:relative;
+      }
+      #proj-app .arq-caja b{display:block;color:#fff;font-size:.8rem;margin-bottom:.2rem;}
+      #proj-app .arq-flecha{font-size:1.1rem;color:#FD531E;align-self:center;}
+      /* Imagen SNIES */
+      #proj-app .fuente{font-size:.7rem;color:#64748b;margin-top:.8rem;}
+    </style>
+
+    <section class="media-section">
+      <h3><span class="tag tag-prof">PROYECTO</span> "EARLYWARN FESNA": detección temprana de deserción estudiantil</h3>
+      <p>Propuesta de una solución tecnológica a una problemática real: la deserción en el primer año de la formación técnica, abordada con automatización, análisis de datos y sistemas inteligentes, manteniendo criterio profesional propio.</p>
+
+      <div id="proj-app">
+        <!-- Banner institucional -->
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-bottom:1.25rem">
+          <span class="ps-badge">Programa oficial · SNIES presencial 111393</span>
+          <span class="ps-badge" style="background:#FD531E">SNIES virtual 111394</span>
+          <span style="font-size:.72rem;color:#94a3b8">Ingeniería de Sistemas — FESNA · Programas profesionales por ciclos</span>
+        </div>
+
+        <!-- 1. Problemática -->
+        <h3 class="ps"><span class="ps-badge" style="background:#FD531E">1 · Problemática</span> La deserción silenciosa del primer año</h3>
+        <p class="ps">En la formación técnica, muchas deserciones se detectan <strong>cuando el estudiante ya se retiró</strong>: las señales (menor asistencia, entregas atrasadas, baja participación en plataformas) quedan dispersas en sistemas y procesos distintos, sin alertas automáticas ni avances oportunos para acompañar a tiempo. Ese es el problema real que este proyecto ataca: convertir señales dispersas en <strong>alertas tempranas accionables</strong> para el bienestar académico.</p>
+
+        <!-- 2. Arquitectura de la propuesta -->
+        <h3 class="ps" style="margin-top:1.5rem"><span class="ps-badge">2 · Propuesta</span> Arquitectura de EARLYWARN FESNA</h3>
+        <div class="arq">
+          <div class="arq-caja"><b>1 · Datos</b>Asistencia, entregas, aulas virtuales (LMS) y calificaciones</div>
+          <div class="arq-flecha">→</div>
+          <div class="arq-caja"><b>2 · Motor de IA</b>Modelo de clasificación de riesgo (aprendizaje supervisado)</div>
+          <div class="arq-flecha">→</div>
+          <div class="arq-caja"><b>3 · Alertas</b>Semáforo semanal por estudiante (verde / amarillo / rojo)</div>
+          <div class="arq-flecha">→</div>
+          <div class="arq-caja"><b>4 · Acompañamiento</b>Panel del tutor y contacto humano vía tutoría</div>
+        </div>
+        <p class="ps" style="margin-top:.5rem"><em>Principio editorial del proyecto:</em> la IA no decide ni etiqueta al estudiante — <strong>prioriza el acompañamiento humano</strong>. El modelo solo organiza información para que el tutor actúe antes, más temprano y con más contexto.</p>
+
+        <!-- 3. Comparación de alternativas -->
+        <h3 class="ps" style="margin-top:1.5rem"><span class="ps-badge">3 · Análisis</span> Alternativas comparadas</h3>
+        <div class="tabla-wrap">
+          <table>
+            <thead>
+              <tr><th>Criterio</th><th>Ruteo con reglas manuales</th><th>Reportes estáticos (BI)</th><th><b>Modelo de ML supervisado (elegido)</b></th></tr>
+            </thead>
+            <tbody>
+              <tr><td><b>Detección temprana</b></td><td><span class="chip-rojo">✗ Reacciona tarde</span></td><td><span class="chip-amar">~ Semanal, histórico</span></td><td><span class="chip-verde">✓ Semáfórica semanal por estudiante</span></td></tr>
+              <tr><td><b>Personalizada estudiante a estudiante</b></td><td><span class="chip-rojo">✗ No escala</span></td><td><span class="chip-amar">~ Segmentos</span></td><td><span class="chip-verde">✓ Caso por caso</span></td></tr>
+              <tr><td><b>Explicabilidad</b></td><td><span class="chip-verde">✓ Total</span></td><td><span class="chip-verde">✓ Total</span></td><td><span class="chip-amar">~ Mitigada con cuotas de explicación (peso a cada factor)</span></td></tr>
+              <tr><td><b>Complejidad técnica</b></td><td><span class="chip-verde">✓ Baja</span></td><td><span class="chip-amar">~ Media</span></td><td><span class="chip-amar">~ Media: datos, validación, rigor</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 4. Prototipo demostración -->
+        <h3 class="ps" style="margin-top:1.5rem"><span class="ps-badge" style="background:#FD531E">4 · Prototipo</span> Demo interactiva del modelo (simulación pedagógica)</h3>
+        <p class="ps">Mueve las 3 señales del semestre simulado y mira cómo el modelo de demostración calcula el nivel de riesgo basado en la lógica del proyecto (pesos ilustrativos, no scores reales de FESNA):</p>
+        <div class="demo">
+          <label>Asistencia a clases: <span id="vasi" style="color:#FD531E;font-weight:800">85</span>%</label>
+          <input type="range" id="iasi" min="0" max="100" value="85" aria-label="Asistencia simulada">
+
+          <label>Entregas al día: <span id="vent" style="color:#FD531E;font-weight:800">90</span>%</label>
+          <input type="range" id="ient" min="0" max="100" value="90" aria-label="Entregas simuladas">
+
+          <label>Rendimiento en evaluaciones: <span id="vnot" style="color:#FD531E;font-weight:800">4,0</span>/5,0</label>
+          <input type="range" id="inot" min="0" max="50" value="40" aria-label="Nota promedio simulada">
+
+          <div class="demo-resultado" id="res"></div>
+          <div style="margin-top:.6rem;font-size:.68rem;color:#64748b">Modelo didáctico de demostración (peso: asistencia 40 %, entregas 30 %, rendimiento 30 %). No representa datos ni algoritmos oficiales de FESNA.</div>
+        </div>
+
+        <div class="grid2">
+          <div class="au-panel" style="background:#020617;border:1px solid #1e293b;border-radius:.8rem;padding:1.1rem 1.25rem">
+            <h4 style="margin:0 0 .5rem;font-size:.9rem;color:#fff">📥 Qué entrega este proyecto</h4>
+            <ul style="margin:0;padding-left:1.1rem;font-size:.78rem;color:#cbd5e1;line-height:1.7">
+              <li>Propuesta de solución técnica y sus límites (esta página)</li>
+              <li>Prototipo interactivo del concepto (demo del panel de riesgo)</li>
+              <li>Comentario profesional: qué haría un ingeniero de datos junior en este flujo</li>
+            </ul>
+          </div>
+          <div class="au-panel" style="background:#020617;border:1px solid #1e293b;border-radius:.8rem;padding:1.1rem 1.25rem">
+            <h4 style="margin:0 0 .5rem;font-size:.9rem;color:#fff">🧭 Criterio profesional (no más IA)</h4>
+            <ul style="margin:0;padding-left:1.1rem;font-size:.78rem;color:#cbd5e1;line-height:1.7">
+              <li>Sesgo de datos: un modelo con datos incompletos <strong>excluye más de lo que ayuda</strong>; se mitiga con auditoría por grupos de estudiantes.</li>
+              <li>Privacidad: minimización de datos y pseudonimización de registros personales.</li>
+              <li>Gobernanza humana: el tutor decide; el modelo solo recomienda.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid3" style="margin-top:2rem">
+          <div class="media-card">
+            <h4>Objetivo</h4>
+            <p small>Diseñar una propuesta de solución a una problemática real mediante IA.</p>
+          </div>
+          <div class="media-card">
+            <h4>Enfoque</h4>
+            <p small>Automatización, análisis de datos, sistemas inteligentes y acompañamiento académico.</p>
+          </div>
+          <div class="media-card">
+            <h4>Apoyo de IA</h4>
+            <p small>Investigar, plantear alternativas, comparar soluciones y construir un prototipo, manteniendo criterio profesional propio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      Recurso multimedia académico · Brayan Vanegas · FESNA · Segundo corte 2026
+    </footer>
+  </div>
+</body>
+
+<script>
+(function () {
+  var iasi = document.getElementById('iasi');
+  var ient = document.getElementById('ient');
+  var inot = document.getElementById('inot');
+  var res = document.getElementById('res');
+
+  function update() {
+    var asi = +iasi.value, ent = +ient.value, nota = +inot.value / 10; // /5,0
+    document.getElementById('vasi').textContent = asi;
+    document.getElementById('vent').textContent = ent;
+    document.getElementById('vnot').textContent = nota.toFixed(1).replace('.', ',');
+
+    // Modelo didáctico: riesgo ponderado (0-100)
+    var riesgo = Math.round((100 - asi) * .4 + (100 - ent) * .3 + (100 - nota * 20) * .3);
+
+
+    var color, nivel, rec;
+    if (riesgo < 30) { color = '#10b981'; nivel = 'BAJO'; rec = 'Seguimiento regular de rutina'; }
+    else if (riesgo < 60) { color = '#f59e0b'; nivel = 'MEDIO'; rec = 'Activar alerta al tutor de curso'; }
+    else { color = '#ef4444'; nivel = 'ALTO'; rec = 'Tutoría prioritaria esta semana'; }
+
+    res.style.borderColor = color;
+    res.innerHTML = 'Nivel de riesgo simulado: <span style="color:' + color + ';font-size:1.1rem">' + nivel + '</span>' +
+                    ' <span style="color:#94a3b8;font-weight:400">(índice ' + riesgo + '/100)</span><br>' +
+                    '<span style="font-weight:400;color:#cbd5e1">Recomendación: ' + rec + '</span>';
+  }
+
+  iasi.addEventListener('input', update);
+  ient.addEventListener('input', update);
+  inot.addEventListener('input', update);
+  update();
+})();
+</script>
+</html>

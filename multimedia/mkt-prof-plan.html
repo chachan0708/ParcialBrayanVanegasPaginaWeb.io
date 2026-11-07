@@ -1,0 +1,201 @@
+<!doctype html>
+<!-- Recurso multimedia — Plan de marketing predictivo con IA analítica (interactivo) -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan de marketing predictivo con IA · Brayan Vanegas · FESNA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="t12">
+  <a href="../index.html#actividades" class="back-link">← Volver al portafolio</a>
+  <a href="../index.html#actividades" class="btn-cerrar" aria-label="Cerrar módulo">×</a>
+
+  <div class="page-shell">
+    <header class="page-header">
+      <span class="page-kicker">Marketing y Publicidad · Nivel Profesional</span>
+      <h1 class="page-title">Plan de marketing predictivo</h1>
+      <p class="page-sub">Plan de marketing predictivo y análisis de macrotendencias de consumo con IA analítica, aplicado a la campaña FESNA.</p>
+    </header>
+
+    <style>
+      #plan-app{
+        width:100%;max-width:64rem;margin:2rem auto;background:#0f172a;color:#e2e8f0;
+        border-radius:1rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.5);border:1px solid #1e293b;
+        font-family:'Poppins','Segoe UI',system-ui,sans-serif;padding:1.5rem;box-sizing:border-box;
+      }
+      #plan-app .pl-badge{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+        background:#0A499C;color:#fff;border-radius:999px;padding:.25rem .75rem;}
+      #plan-app h3.pl{font-size:1.05rem;font-weight:800;color:#fff;margin:1.5rem 0 .4rem;}
+      #plan-app p.pl{font-size:.85rem;color:#cbd5e1;line-height:1.7;margin:.2rem 0;}
+      #plan-app .pl-aviso{font-size:.72rem;color:#fbbf24;background:rgba(251,191,36,.08);
+        border:1px solid rgba(251,191,36,.35);border-radius:.5rem;padding:.5rem .8rem;margin-bottom:1.25rem;line-height:1.5;}
+      /* Tendencias */
+      #plan-app .rd-grid{display:grid;grid-template-columns:1fr;gap:.75rem;margin-bottom:1.25rem;}
+      @media(min-width:700px){#plan-app .rd-grid{grid-template-columns:1fr 1fr;}}
+      #plan-app .rd-card{background:#020617;border:1px solid #1e293b;border-radius:.7rem;padding:.95rem 1.1rem;}
+      #plan-app .rd-card h5{margin:0 0 .35rem;font-size:.88rem;color:#fff;}
+      #plan-app .rd-card p{margin:0 0 .45rem;font-size:.76rem;color:#94a3b8;line-height:1.6;}
+      #plan-app .rd-meta{display:flex;justify-content:space-between;font-size:.68rem;color:#64748b;margin-top:.55rem;}
+      #plan-app .rd-barra{height:.35rem;background:#1e293b;border-radius:999px;overflow:hidden;}
+      #plan-app .rd-barra i{display:block;height:100%;border-radius:999px;}
+      /* Tabla del modelo predictivo */
+      #plan-app .tabla-wrap{overflow-x:auto;background:#020617;border:1px solid #1e293b;border-radius:.7rem;}
+      #plan-app table{width:100%;border-collapse:collapse;font-size:.76rem;min-width:640px;}
+      #plan-app th{text-align:left;padding:.6rem .75rem;color:#94a3b8;font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #1e293b;white-space:nowrap;}
+      #plan-app td{padding:.6rem .75rem;border-bottom:1px solid rgba(30,41,59,.6);color:#cbd5e1;vertical-align:top;}
+      #plan-app tr:last-child td{border-bottom:none;}
+      #plan-app td b{color:#fff;}
+      #plan-app .sube{color:#34d399;font-weight:800;}
+      #plan-app .bajo{color:#f87171;font-weight:800;}
+      /* Hoja de ruta */
+      #plan-app .fases{display:grid;grid-template-columns:1fr;gap:.75rem;margin:1rem 0;}
+      @media(min-width:760px){#plan-app .fases{grid-template-columns:repeat(3,1fr);}}
+      #plan-app .fase{background:#020617;border:1px solid #1e293b;border-radius:.7rem;padding:.9rem 1rem;font-size:.78rem;color:#cbd5e1;line-height:1.6;}
+      #plan-app .fase b{display:block;color:#fff;font-size:.8rem;margin-bottom:.15rem;}
+      #plan-app .fase i{color:#FD531E;font-style:normal;font-weight:800;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;}
+      #plan-app .pl-panel{background:#020617;border:1px solid #1e293b;border-radius:.7rem;padding:1.1rem 1.25rem;margin-bottom:1rem;}
+      #plan-app .pl-panel h4{margin:0 0 .55rem;font-size:.9rem;color:#fff;}
+      #plan-app .pl-panel ul{margin:0;padding-left:1.1rem;}
+      #plan-app .pl-panel li{font-size:.78rem;color:#cbd5e1;line-height:1.75;margin-bottom:.3rem;}
+      #plan-app .kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;}
+      @media(min-width:760px){#plan-app .kpi-grid{grid-template-columns:repeat(4,1fr);}}
+      #plan-app .kpi{background:#020617;border:1px solid #1e293b;border-radius:.6rem;padding:.8rem .9rem;}
+      #plan-app .kpi b{display:block;color:#fff;font-size:1.1rem;}
+      #plan-app .kpi span{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#94a3b8;}
+      #plan-app .fuente{font-size:.7rem;color:#64748b;margin-top:.8rem;}
+    </style>
+
+    <section class="media-section">
+      <h3><span class="tag tag-prof">PLAN</span> Plan de marketing predictivo — campaña FESNA 2027</h3>
+      <p>Plan orientado por datos: macrotendencias de consumo, modelo predictivo de la demanda y hoja de ruta ejecutable, con IA analítica como instrumento de análisis y decisión gerencial.</p>
+
+      <div id="plan-app">
+        <div class="pl-aviso">⚠️ <strong>Aclaración académica:</strong> las proyecciones y factores son <strong>ilustrativos</strong>, construidos con IA analítica con fines didácticos. No representan datos oficiales de FESNA ni proyecciones del mercado reales verificadas.</div>
+
+        <!-- 1. Objetivo del plan -->
+        <h3 class="pl"><span class="pl-badge">1 · Objetivo</span> De la "campaña por intuición" a la campaña orientada por datos</h3>
+        <p class="pl">El objetivo del plan es pasar de decidir por intuición a <strong>decidir por probabilidad</strong>: usar datos de comportamiento (búsquedas, interacción en redes, consultas por WhatsApp) para <strong>anticipar</strong> qué mensajes, canales y segmentos tienen mayor chance de convertir, y redistribuir la inversión antes de gastarla, no después de perderla.</p>
+
+        <!-- 2. Macrotendencias -->
+        <h3 class="pl"><span class="pl-badge" style="background:#FD531E">2 · Macrotendencias</span> Qué está cambiamos el consumo de los aspirantes</h3>
+        <div class="rd-grid">
+          <div class="rd-card">
+            <h5>📲 Descubrimiento social-first</h5>
+            <p>La decisión de estudio empieza en video corto: las redes sociales funcionan como buscador y el humor como validador social entre pares.</p>
+            <div class="rd-barra"><i style="width:92%;background:#10b981"></i></div>
+            <div class="rd-meta"><span>Impacto en la campaña</span><span>Muy alto</span></div>
+          </div>
+          <div class="rd-card">
+            <h5>🤖 Confianza delegada a IA</h5>
+            <p>Los usuarios piden a la IA que resuma opciones y les explique procesos; la marca debe ser citada por las respuestas de IA.</p>
+            <div class="rd-barra"><i style="width:85%;background:#10b981"></i></div>
+            <div class="rd-meta"><span>Impacto</span><span>Alto</span></div>
+          </div>
+          <div class="rd-card">
+            <h5>⏱️ Economía del tiempo (micro-learning)</h5>
+            <p>El público valora la formación modular por ciclos: "avanzar mientras trabajo" se convierte en argumento de compra.</p>
+            <div class="rd-barra"><i style="width:80%;background:#f59e0b"></i></div>
+            <div class="rd-meta"><span>Impacto</span><span>Alto</span></div>
+          </div>
+          <div class="rd-card">
+            <h5>💬 Mensajería como canal de cierre</h5>
+            <p>El conversacional (WhatsApp) desplaza al formulario web: la conversación convierte; el clic pregunta, no.</p>
+            <div class="rd-barra"><i style="width:78%;background:#f59e0b"></i></div>
+            <div class="rd-meta"><span>Impacto</span><span>Alto</span></div>
+          </div>
+          <div class="rd-card">
+            <h5>🥄 Hiperpersonalización esperada</h5>
+            <p>El público ignora mensajes genéricos: espera contenido que aparezca "escrito para mí" — casos, temas y tono por segmento.</p>
+            <div class="rd-barra"><i style="width:72%;background:#f59e0b"></i></div>
+            <div class="rd-meta"><span>Impacto</span><span>Medio-alto</span></div>
+          </div>
+          <div class="rd-card">
+            <h5>🔍 Buscador de propósito (zero-click)</h5>
+            <p>Las respuestas IA y los resultados enriquecidos reducen los clics al sitio web: la información clave debe estar en la búsqueda misma.</p>
+            <div class="rd-barra"><i style="width:65%;background:#fbbf24"></i></div>
+            <div class="rd-meta"><span>Impacto</span><span>Medio</span></div>
+          </div>
+        </div>
+        <p class="pl" style="font-size:.7rem;color:#64748b;margin-top:.2rem">Barras de impacto: valoración cualitativa del análisis con IA (no son mediciones de mercado oficiales).</p>
+
+        <!-- 3. Modelo predictivo -->
+        <h3 class="pl"><span class="pl-badge">3 · Modelo</span> Factores predictores de inscripción (tabla de hipótesis)</h3>
+        <div class="tabla-wrap">
+          <table>
+            <thead>
+              <tr><th>Señal / factor (driver)</th><th>Qué predice</th><th>Señal observable</th><th>Acción si sube / baja</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><b>Interacción con Reels</b> (riesgo, compartidos)</td><td class="sube">↑ Intención temprana</td><td>Cachés por video, salvas y compartidos semanales</td><td>Escalar TikTok/IG si crece; refrescar gancho si cae</td></tr>
+              <tr><td><b>Mensajes por WhatsApp</b> ("INFO")</td><td class="sube">↑ Intención alta</td><td># conversaciones iniciadas por canal</td><td>Responde &lt; 5 min: la probabilidad de cierre cae rápido con la demora</td></tr>
+              <tr><td><b>Clic pero no conversación</b></td><td class="bajo">↓ Fricción en el destino</td><td>CTR alto con consultas bajas</td><td>Revisar landing: claridad del mensaje, cargue, y siguiente paso visible</td></tr>
+              <tr><td><b>Búsquedas marca + programa</b></td><td class="sube">↑ Madurez de decisión</td><td>Consultas "FESNA + programa" en buscadores</td><td>Refuerza testimonios y FAQ en respuestas IA y Google Business</td></tr>
+              <tr><td><b>Frecuencia de anuncio</b> (&gt; 3/semana)</td><td class="bajo">↓ Saturación de audiencia</td><td>CPC que sube sin subir clics</td><td>Rotar creativo antes del 4to impacto</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 4. Estrategia -->
+        <div style="margin-top:1.5rem">
+        <h3 class="pl" style="margin-top:0"><span class="pl-badge">4 · Estrategia</span> Dónde se juega el plan</h3>
+        <div class="pl-panel">
+          <h4>🎯 Segmentación (heredada del buyer persona técnico)</h4>
+          <ul>
+            <li><b>Diego (bachiller ambicioso):</b> descubrimiento TikTok/IG → estrategia de alcance y trascendencia con humor.</li>
+            <li><b>Laura (trabajadora que escala):</b> consideración con testimonios reales en Facebook → estrategia de prueba social.</li>
+            <li><b>"Interesado templado"</b> (visitó el perfil o comentó): retargeting con recordatorio vía WhatsApp.</li>
+          </ul>
+        </div>
+        <div class="pl-panel">
+          <h4>🧠 Neuromarketing aplicado (principios de decisión)</h4>
+          <ul>
+            <li><b>Prueba social:</b> testimonios de "gente como yo" antes que promesas institucionales.</li>
+            <li><b>Avance gradual:</b> mostrar el camino Técnica → Tecnología → Profesional reduce la sensación de "salto" más grande.</li>
+            <li><b>Framing de tiempo:</b> "un día de estos" → "hoy": activa el arrepentimiento anticipado, no la prisa artificial.</li>
+            <li><b>Efecto ancla del esfuerzo:</b> mostrar que avanzar un ciclo es alcanzable frente a la idea "universidad completa".</li>
+          </ul>
+        </div>
+        <div class="pl-panel">
+          <h4>📊 KPIs que el plan vigila (árbol de métricas)</h4>
+          <div class="kpi-grid" style="margin-top:.4rem">
+            <div class="kpi"><b>CTR</b><span>salud del mensaje por canal</span></div>
+            <div class="kpi"><b>Tasa INFO</b><span>% de impresiones que conversan</span></div>
+            <div class="kpi"><b>CPA</b><span>costo por asesor consultado</span></div>
+            <div class="kpi"><b>ROAS</b><span>retorno relativo de la mezcla</span></div>
+          </div>
+        </div>
+        </div>
+
+        <!-- 5. Hoja de ruta -->
+        <h3 class="pl"><span class="pl-badge" style="background:#FD531E">5 · Hoja de ruta</span> 90 días en 3 sprints</h3>
+        <div class="fases">
+          <div class="fase"><i>Sprint 1 · Días 1–30</i><br><br><b>Instrumentar</b><br>Definir eventos a medir (interacción, "INFO", retención de video), unificar etiquetas por canal y activar el asesor virtual de WhatsApp como canal de cierre.</div>
+          <div class="fase"><i>Sprint 2 · Días 31–60</i><br><br><b>Experimentar</b><br>Test A/B de ganchos por buyer persona, redistribuir pauta hacia el canal mejor CTR e integrar respuestas IA al DH del broadcast.</div>
+          <div class="fase"><i>Sprint 3 · Días 61–90</i><br><br><b>Predecir</b><br>Con los datos de los sprints 1 y 2, construir el tablero de señales (clic → "INFO" → consulta) y fijar las metas de la próxima ola de campaña.</div>
+        </div>
+
+        <div class="grid3" style="margin-top:2rem">
+          <div class="media-card">
+            <h4>Objetivo</h4>
+            <p small>Diseñar un plan de marketing predictivo basado en datos y tendencias.</p>
+          </div>
+          <div class="media-card">
+            <h4>Enfoque</h4>
+            <p small>Neuromarketing, gerencia de marcas globales y analítica de datos aplicada al mercado estratégico.</p>
+          </div>
+          <div class="media-card">
+            <h4>Apoyo de IA</h4>
+            <p small>Herramientas de IA analítica para el análisis de macrotendencias de consumo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      Recurso multimedia académico · Brayan Vanegas · FESNA · Segundo corte 2026
+    </footer>
+  </div>
+</body>
+</html>

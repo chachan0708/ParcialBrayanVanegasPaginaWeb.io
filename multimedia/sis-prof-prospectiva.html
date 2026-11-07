@@ -1,0 +1,230 @@
+<!doctype html>
+<!-- Recurso multimedia — Podcast/Video de análisis prospectivo sobre IA e ingeniería de sistemas (interactivo) -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análisis prospectivo IA e Ingeniería de Sistemas · Brayan Vanegas · FESNA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="t9">
+  <a href="../index.html#actividades" class="back-link">← Volver al portafolio</a>
+  <a href="../index.html#actividades" class="btn-cerrar" aria-label="Cerrar módulo">×</a>
+
+  <div class="page-shell">
+    <header class="page-header">
+      <span class="page-kicker">Ingeniería de Sistemas · Nivel Profesional · SNIES 111393 / 111394</span>
+      <h1 class="page-title">Podcast / Video de análisis prospectivo</h1>
+      <p class="page-sub">Análisis prospectivo sobre IA e Ingeniería de Sistemas: tendencias, escenarios al 2035 y el rol futuro del ingeniero.</p>
+    </header>
+
+    <style>
+      #prof-app{
+        width:100%;max-width:64rem;margin:2rem auto;background:#0f172a;color:#e2e8f0;
+        border-radius:1rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.5);border:1px solid #1e293b;
+        font-family:'Poppins','Segoe UI',system-ui,sans-serif;padding:1.5rem;box-sizing:border-box;
+      }
+      #prof-app .pr-badge{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+        background:#0A499C;color:#fff;border-radius:999px;padding:.25rem .75rem;}
+      #prof-app h3.pr{font-size:1.05rem;font-weight:800;color:#fff;margin:1.4rem 0 .2rem;}
+      #prof-app p.pr{font-size:.85rem;color:#cbd5e1;line-height:1.7;margin:.2rem 0;}
+      #prof-app .pr-linea{display:flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:800;
+        text-transform:uppercase;letter-spacing:.08em;color:#94a3b8;margin:0 0 .5rem;}
+      #prof-app .pr-linea::after{content:'';flex:1;height:1px;background:#1e293b;}
+      /* Escenario interactivo */
+      #prof-app .es-tabs{display:grid;grid-template-columns:1fr;gap:.5rem;margin:1rem 0;}
+      @media(min-width:760px){#prof-app .es-tabs{grid-template-columns:repeat(3,1fr);}}
+      #prof-app .es-tab{
+        text-align:left;padding:.8rem 1rem;border-radius:.75rem;background:rgba(2,6,23,.6);
+        border:1px solid #1e293b;cursor:pointer;transition:all .2s ease;font-family:inherit;
+      }
+      #prof-app .es-tab .es-n{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#94a3b8;}
+      #prof-app .es-tab .es-t{font-size:.85rem;font-weight:700;color:#fff;margin-top:.2rem;}
+      #prof-app .es-tab:hover{border-color:#475569;}
+      #prof-app .es-tab.activa{background:#1e293b;border-color:#FD531E;box-shadow:0 10px 15px -3px rgba(253,83,30,.15);}
+      #prof-app .es-panel{background:#020617;border:1px solid #1e293b;border-radius:.8rem;padding:1.2rem 1.3rem;}
+      #prof-app .es-panel h4{margin:0 0 .5rem;font-size:1rem;color:#fff;}
+      #prof-app .es-panel .es-proba{display:inline-block;font-size:.68rem;font-weight:800;border-radius:999px;
+        padding:.2rem .7rem;margin-bottom:.7rem;}
+      #prof-app .es-panel p{margin:.4rem 0;font-size:.82rem;color:#cbd5e1;line-height:1.7;}
+      #prof-app .es-panel ul{margin:.6rem 0 0;padding-left:1.1rem;}
+      #prof-app .es-panel li{font-size:.78rem;color:#cbd5e1;line-height:1.7;margin-bottom:.3rem;}
+      /* Tendencias */
+      #prof-app .tend{display:grid;grid-template-columns:1fr;gap:.75rem;margin:1rem 0;}
+      @media(min-width:700px){#prof-app .tend{grid-template-columns:1fr 1fr;}}
+      #prof-app .td-card{background:#020617;border:1px solid #1e293b;border-radius:.7rem;padding:.9rem 1.1rem;}
+      #prof-app .td-card h5{margin:0 0 .3rem;font-size:.85rem;color:#fff;}
+      #prof-app .td-card p{margin:0;font-size:.75rem;color:#94a3b8;line-height:1.6;}
+      #prof-app .td-barra{height:.35rem;background:#1e293b;border-radius:999px;overflow:hidden;margin-top:.5rem;}
+      #prof-app .td-barra i{display:block;height:100%;border-radius:999px;}
+      /* Audiencia (podcast/video) */
+      #prof-app .medio{background:#020617;border:1px solid #1e293b;border-radius:.8rem;padding:1.1rem 1.25rem;}
+      #prof-app .medio p{font-size:.78rem;color:#cbd5e1;line-height:1.7;margin:.3rem 0;}
+      #prof-app .fuente{font-size:.7rem;color:#64748b;margin-top:.8rem;}
+    </style>
+
+    <section class="media-section">
+      <h3><span class="tag tag-pod">PROSPECTIVA</span> ¿Hacia dónde camina la Ingeniería de Sistemas con IA?</h3>
+      <p>Análisis prospectivo estructurado (horizonte 2026–2035): señales actuales, factores de cambio y tres escenarios alternos de futuro, con implicaciones concretas para el rol del ingeniero de sistemas. Diseñado para narrar sus hallazgos en formato podcast/video.</p>
+
+      <div id="prof-app">
+        <!-- Banner -->
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-bottom:1.25rem">
+          <span class="pr-badge">Programa oficial · SNIES presencial 111393</span>
+          <span class="pr-badge" style="background:#FD531E">SNIES virtual 111394</span>
+          <span style="font-size:.72rem;color:#94a3b8">Ingeniería de Sistemas — FESNA · "Programas profesionales por ciclos"</span>
+        </div>
+
+        <!-- 1. Metodología -->
+        <h3 class="pr"><span class="pr-badge">1 · Metodología</span> Cómo se construye un análisis prospectivo</h3>
+        <p class="pr">Este análisis usa la ruta clásica de la prospectiva: <strong>(1) explorar señales</strong> —qué está pasando hoy—, <strong>(2) identificar factores de cambio</strong> —qué podría acelerar o frenar—, <strong>(3) construir escenarios</strong> —futuros alternativos coherentes, no una sola "predicción"— y <strong>(4) deducir implicaciones</strong> para quienes estudian y ejerce la Ingeniería de Sistemas. La prospectiva no adivina: <strong>prepara para varios futuros posibles</strong>.</p>
+
+        <!-- 2. Señales y factores -->
+        <h3 class="pr"><span class="pr-badge" style="background:#FD531E">2 · Señales hoy</span> Tendencias que ya están en movimiento</h3>
+        <div class="tend">
+          <div class="td-card">
+            <h5>🤝 IA como copiloto del desarrollo</h5>
+            <p>La generación asistida de código se integra a los flujos cotidianos de trabajo; el valor migra de escribir líneas a diseñar, validar y mantener.</p>
+            <div class="td-barra"><i style="width:90%;background:#10b981"></i></div>
+          </div>
+          <div class="td-card">
+            <h5>🔐 Seguridad y confianza por diseño</h5>
+            <p>Regulación, auditoría de algoritmos y privacidad exigida: los sistemas deben demostrar cómo deciden, no solo funcionar.</p>
+            <div class="td-barra"><i style="width:80%;background:#10b981"></i></div>
+          </div>
+          <div class="td-card">
+            <h5>☁️ Plataformas nativas de IA</h5>
+            <p>Infraestructura de cómputo y modelos como servicio: la barrera de entrada baja, y el diferenciador es el uso responsable de los datos.</p>
+            <div class="td-barra"><i style="width:75%;background:#f59e0b"></i></div>
+          </div>
+          <div class="td-card">
+            <h5>🎓 Recualificación acelerada</h5>
+            <p>La educación por ciclos y los programas de tipo flexible ganan fuerza: la formación deja de ser un evento único.</p>
+            <div class="td-barra"><i style="width:70%;background:#f59e0b"></i></div>
+          </div>
+        </div>
+        <p class="pr" style="font-size:.7rem;color:#64748b;margin-top:.3rem">Barras de impacto: estimación cualitativa académica del propio análisis (no estadística oficial).</p>
+
+        <!-- 3. Escenarios interactivos -->
+        <h3 class="pr"><span class="pr-badge">3 · Escenarios</span> Tres futuros alternativos (elige y compara)</h3>
+        <div class="es-tabs" id="es-tabs"></div>
+        <div class="es-panel" id="es-panel"></div>
+
+        <!-- 4. Podcast/video -->
+        <h3 class="pr"><span class="pr-badge" style="background:#FD531E">4 · Podcast / Video</span> Cuento el análisis en audio</h3>
+        <div class="medio">
+          <p><strong>Guion de narración:</strong> estructurado en 5 actos: (1) la pregunta de apertura "¿la IA hará que sobren los ingenieros?", (2) las señales de hoy, (3) los tres escenarios, (4) qué significa para un estudiante de Sistemas en 2026 y (5) cierre: "no es discutir otra tecnología: es otra forma de hacer ingeniería".</p>
+          <p>El audio/video final se publica aquí: el reproductor aparece automáticamente al subir el archivo a <code>multimedia/</code> con el nombre <code>prospectiva-sis-prof.mp4</code> (o <code>.m4a</code>).</p>
+          <div style="margin-top:1rem;text-align:center">
+            <video id="pros-video" controls style="width:100%;max-width:760px;border-radius:12px;border:1px solid var(--border);background:#000;display:none">
+              <source src="prospectiva-sis-prof.mp4" type="video/mp4">
+              Tu navegador no soporta la reproducción de video.
+            </video>
+            <audio id="pros-audio" controls style="width:100%;max-width:500px;border-radius:12px;display:none">
+              <source src="prospectiva-sis-prof.m4a" type="audio/mp4">
+              Tu navegador no soporta la reproducción de audio.
+            </audio>
+          </div>
+        </div>
+
+        <!-- 5. Criterio propio -->
+        <h3 class="pr"><span class="pr-badge">5 · Conclusión</span> Criterio profesional (veredicto)</h3>
+        <p class="pr"><strong>Mi conclusión del análisis:</strong> el escenario probable es el mixto — la IA absorbe tareas, no roles. Lo que sobra no es la disciplina, sino su versión sin criterio: el ingeniero que no entienda el negocio, no sepa evaluar sesgos ni pueda auditar un sistema seguirá siendo reemplazable con cualquier herramienta. <strong>Por eso estudiar Sistemas en la era de la IA tiene sentido precisamente porque hay más ingeniería por hacer, y menos "tipeo" que hacer.</strong></p>
+
+        <div class="grid3" style="margin-top:2rem">
+          <div class="media-card">
+            <h4>Objetivo</h4>
+            <p small>Analizar de forma prospectiva el impacto de la IA en la Ingeniería de Sistemas.</p>
+          </div>
+          <div class="media-card">
+            <h4>Enfoque</h4>
+            <p small>Automatización, análisis de datos, seguridad, sistemas inteligentes y transformación digital.</p>
+          </div>
+          <div class="media-card">
+            <h4>Apoyo de IA</h4>
+            <p small>Investigación y síntesis de tendencias, manteniendo el análisis y el criterio profesional propio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      Recurso multimedia académico · Brayan Vanegas · FESNA · Segundo corte 2026
+    </footer>
+  </div>
+</body>
+
+<script>
+(function () {
+  var escenarios = [
+    {
+      id: 'opt', nombre: 'Optimista', titulo: '"El apogeo del ingeniero-aumentado"',
+      proba: 'Escenario favorable · probabilidad estimada 30 %', probaColor: '#10b981',
+      supu: 'Las plataformas de IA maduran de forma estable; la seguridad y la gobernanza acompañan el ritmo.',
+      parte: '<strong>Quién gana terreno:</strong> los mercados digitales se amplían; la especialización se flexibiliza y es posible trabajar desde cualquier ciudad.',
+      paci: 'El ingeniero orquesta múltiples agentes de IA y se convierte en el arquitecto de sistemas inteligentes: quien decide, integra y les da dirección.',
+      comps: ['Arquitectura de sistemas con IA', 'Diseño de productos de datos', 'Liderazgo de equipos híbridos (humano + agentes)']
+    },
+    {
+      id: 'mixto', nombre: 'Mixto (probable)', titulo: '"La bifurcación de la profesión"',
+      proba: 'Escenario central del análisis · probabilidad estimada 50 %', probaColor: '#f59e0b',
+      supu: 'La IA absorbe tareas rutinarias (código, pruebas, documentación) pero los roles críticos —arquitectura, seguridad, decisión— siguen siendo humanos.',
+      parte: '<strong>Quién gana terreno:</strong> el empleo junior cambia: menos "escribir código de cero", más verificar, testear y mantener lo que produce la IA.',
+      paci: 'El ingeniero evoluciona de operador a supervisor: quien selecciona herramientas, valida resultados y carga con la responsabilidad final.',
+      comps: ['Aseguramiento de calidad del sistema: auditoría, verificabilidad, seguridad', 'Evaluación de ética y sesgos en la IA', 'Gestión del ciclo de vida del software con IA integrada']
+    },
+    {
+      id: 'pesi', nombre: 'Pesimista', titulo: '"El encogimiento de los roles"',
+      proba: 'Escenario adverso a mitigar · probabilidad estimada 20 %', probaColor: '#ef4444',
+      supu: 'La automatización avanza más rápido que la formación; la confianza y la regulación quedan por detrás del despliegue técnico.',
+      parte: '<strong>Quién gana terreno:</strong> pocos actores grandes concentran el desarrollo; el mercado junior se achica y se vuelve más competitivo.',
+      paci: 'Los roles puramente operativos se reducen; sobrevive quien logre agregar valor donde la IA no llega: perfil con criterio de negocio y de organización.',
+      comps: ['Especialización de nicho (seguridad, datos, regulación)', 'Habilidades de negocio y comunicación', 'Innovación aplicada: crear productos, no solo consumir plataformas']
+    }
+  ];
+
+  var pedir = null;
+  var nas = document.getElementById('es-tabs');
+  var panel = document.getElementById('es-panel');
+
+  function construirTab(es) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'es-tab';
+    btn.dataset.id = es.id;
+    btn.innerHTML = '<div class="es-n">Escenario ' + es.nombre + '</div><div class="es-t">' + es.titulo + '</div>';
+    btn.addEventListener('click', function () { activo = es.id; render(); });
+    nas.appendChild(btn);
+  }
+
+  function render() {
+    var es = escenarios.filter(function (e) { return e.id === activo; })[0];
+    panel.innerHTML =
+      '<span class="es-proba" style="background:rgba(253,83,30,.12);border:1px solid rgba(253,83,30,.4);color:#fdba74">' + es.proba + '</span>' +
+      '<h4>' + es.titulo + '</h4>' +
+      '<p>' + es.supu + '</p><br>' +
+      '<p>' + es.parte + '</p><br>' +
+      '<p><strong>Tal como evitarías el escenario: </strong>' + es.paci + '</p>' +
+      '<div class="pr-linea" style="margin-top:.8rem">Competencias críticas de este futuro</div>' +
+      '<ul style="padding-left:1.1rem;margin:.4rem 0 0">' + es.comps.map(function (c) { return '<li>' + c + '</li>'; }).join('') + '</ul>';
+
+    nas.querySelectorAll('.es-tab').forEach(function (t) {
+      t.classList.toggle('activa', t.dataset.id === activo);
+    });
+  }
+
+  escenarios.forEach(construirTab);
+  render();
+
+  // Mostrar medio solo si los archivos existan
+  ['prospectiva-sis-prof.mp4', 'prospectiva-sis-prof.m4a'].forEach(function (nombre, i) {
+    var el = document.getElementById(i === 0 ? 'pros-video' : 'pros-audio');
+    var req = new XMLHttpRequest();
+    req.open('HEAD', nombre);
+    req.onload = function () { if (req.status >= 200 && req.status < 400) el.style.display = ''; };
+    req.send();
+  });
+})();
+</script>
+</html>

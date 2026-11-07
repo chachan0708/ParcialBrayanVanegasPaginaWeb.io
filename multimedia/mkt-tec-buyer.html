@@ -1,0 +1,317 @@
+<!doctype html>
+<!-- Recurso multimedia — Buyer Persona y copys publicitarios con IA generativa (interactivo) -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buyer Persona y copys con IA · Brayan Vanegas · FESNA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="t4">
+  <a href="../index.html#actividades" class="back-link">← Volver al portafolio</a>
+  <a href="../index.html#actividades" class="btn-cerrar" aria-label="Cerrar módulo">×</a>
+
+  <div class="page-shell">
+    <header class="page-header">
+      <span class="page-kicker">Marketing y Publicidad · Tecnología en Gestión Comercial y Publicidad</span>
+      <h1 class="page-title">Buyer Persona y copys publicitarios con IA</h1>
+      <p class="page-sub">Creación y optimización de Buyer Persona y textos publicitarios con IA generativa, alineados a la campaña FESNA "Aprende lo que te mueve".</p>
+    </header>
+
+    <style>
+      #buyer-app{
+        width:100%;max-width:64rem;margin:2rem auto;background:#0f172a;color:#e2e8f0;
+        border-radius:1rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.5);border:1px solid #1e293b;
+        font-family:'Poppins','Segoe UI',system-ui,sans-serif;padding:1.5rem;box-sizing:border-box;
+      }
+      /* Selector de buyer persona */
+      #buyer-app .bp-tabs{display:grid;grid-template-columns:1fr;gap:.6rem;margin-bottom:1.5rem;}
+      @media(min-width:700px){#buyer-app .bp-tabs{grid-template-columns:1fr 1fr;}}
+      #buyer-app .bp-tab{
+        display:flex;align-items:center;gap:.8rem;text-align:left;padding:.8rem 1rem;border-radius:.75rem;
+        background:rgba(2,6,23,.6);border:1px solid #1e293b;cursor:pointer;transition:all .2s ease;font-family:inherit;
+      }
+      #buyer-app .bp-tab .bp-mini{
+        width:2.6rem;height:2.6rem;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+        font-weight:800;color:#fff;font-size:1rem;
+      }
+      #buyer-app .bp-tab .bp-q{font-weight:700;color:#fff;font-size:.85rem;}
+      #buyer-app .bp-tab .bp-r{font-size:.7rem;color:#94a3b8;}
+      #buyer-app .bp-tab:hover{border-color:#475569;}
+      #buyer-app .bp-tab.activa{background:#1e293b;border-color:#FD531E;box-shadow:0 10px 15px -3px rgba(253,83,30,.15);}
+      /* Ficha del buyer */
+      #buyer-app .bp-ficha{
+        display:grid;grid-template-columns:1fr;gap:1.25rem;background:#020617;
+        padding:1.5rem;border-radius:1rem;border:1px solid #1e293b;
+      }
+      @media(min-width:800px){#buyer-app .bp-ficha{grid-template-columns:2fr 3fr;}}
+      #buyer-app .bp-identidad{text-align:center;}
+      #buyer-app .bp-avatar{
+        width:6rem;height:6rem;border-radius:50%;margin:0 auto .75rem;display:flex;align-items:center;justify-content:center;
+        font-size:2.2rem;font-weight:900;color:#fff;
+      }
+      #buyer-app .bp-nombre{font-size:1.2rem;font-weight:800;color:#fff;line-height:1.25;}
+      #buyer-app .bp-rol{font-size:.75rem;color:#FD531E;font-weight:600;margin-top:.25rem;}
+      #buyer-app .bp-quote{
+        margin-top:1rem;padding:.8rem 1rem;border-left:3px solid #FD531E;background:rgba(30,41,59,.5);
+        border-radius:.5rem;font-style:italic;font-size:.8rem;color:#cbd5e1;text-align:left;
+      }
+      #buyer-app .bp-datos{font-size:.8rem;color:#cbd5e1;text-align:left;line-height:1.9;margin-top:1rem;}
+      #buyer-app .bp-datos b{
+        color:#94a3b8;font-weight:600;display:inline-block;min-width:9.5rem;font-size:.72rem;
+        text-transform:uppercase;letter-spacing:.05em;
+      }
+      #buyer-app .bp-seccion{margin-bottom:1.1rem;}
+      #buyer-app .bp-seccion:last-of-type{margin-bottom:0;}
+      #buyer-app .bp-tit{
+        font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#94a3b8;
+        margin:0 0 .5rem;
+      }
+      #buyer-app .bp-chips{display:flex;flex-wrap:wrap;gap:.4rem;}
+      #buyer-app .bp-chip{background:rgba(253,83,30,.12);border:1px solid rgba(253,83,30,.4);color:#fdba74;border-radius:999px;padding:.25rem .7rem;font-size:.72rem;}
+      #buyer-app .bp-chip.mot{background:rgba(59,130,246,.12);border-color:rgba(59,130,246,.4);color:#93c5fd;}
+      #buyer-app .bp-chip.dig{background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.4);color:#6ee7b7;}
+      #buyer-app .bp-viaje{margin:0;font-size:.8rem;color:#cbd5e1;line-height:1.7;}
+      /* Copys */
+      #buyer-app .bp-copys{margin-top:1.5rem;background:#020617;padding:1.5rem;border-radius:1rem;border:1px solid #1e293b;}
+      #buyer-app .bp-copys-tit{font-size:1rem;font-weight:800;color:#fff;margin:0 0 1rem;}
+      #buyer-app .bp-copys-grid{display:grid;grid-template-columns:1fr;gap:1rem;}
+      @media(min-width:800px){#buyer-app .bp-copys-grid{grid-template-columns:1fr 1fr;}}
+      #buyer-app .cp-card{
+        background:#0f172a;border:1px solid #1e293b;border-radius:.75rem;padding:1rem;display:flex;flex-direction:column;
+      }
+      #buyer-app .cp-canal{
+        display:inline-block;align-self:flex-start;font-size:.65rem;font-weight:800;letter-spacing:.08em;
+        text-transform:uppercase;padding:.2rem .6rem;border-radius:999px;margin-bottom:.6rem;color:#fff;
+      }
+      #buyer-app .cp-texto{font-size:.85rem;line-height:1.65;color:#e2e8f0;margin:0;}
+      #buyer-app .cp-cta{margin-top:.75rem;font-size:.7rem;color:#94a3b8;border-top:1px solid rgba(30,41,59,.8);padding-top:.6rem;}
+      #buyer-app .cp-cta b{color:#FD531E;}
+      #buyer-app .bp-foot{margin-top:1.5rem;text-align:center;font-size:12px;color:#64748b;}
+    </style>
+
+    <section class="media-section">
+      <h3><span class="tag">BUYER PERSONA</span> Audiencias de la campaña "Aprende lo que te mueve"</h3>
+      <p>Selecciona un buyer persona y observa cómo la ficha completa y los copys publicitarios por canal se actualizan según sus dolores, motivaciones y hábitos digitales.</p>
+
+      <div id="buyer-app">
+        <!-- Selector de buyer personas -->
+        <div class="bp-tabs" id="bp-tabs"></div>
+
+        <!-- Ficha del buyer persona -->
+        <div class="bp-ficha">
+          <div class="bp-identidad">
+            <div class="bp-avatar" id="bp-avatar"></div>
+            <div class="bp-nombre" id="bp-nombre"></div>
+            <div class="bp-rol" id="bp-rol"></div>
+            <div class="bp-quote" id="bp-quote"></div>
+            <div class="bp-datos" id="bp-datos"></div>
+          </div>
+          <div>
+            <div class="bp-seccion">
+              <div class="bp-tit">💔 Dolores y frustraciones</div>
+              <div class="bp-chips" id="bp-dolores"></div>
+            </div>
+            <div class="bp-seccion">
+              <div class="bp-tit">🚀 Motivaciones y objetivos</div>
+              <div class="bp-chips" id="bp-motivos"></div>
+            </div>
+            <div class="bp-seccion">
+              <div class="bp-tit">📱 Comportamiento digital</div>
+              <div class="bp-chips" id="bp-digital"></div>
+            </div>
+            <div class="bp-seccion" style="margin-bottom:0">
+              <div class="bp-tit">🛤️ Viaje de decisión</div>
+              <p class="bp-viaje" id="bp-viaje"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copys publicitarios -->
+        <div class="bp-copys">
+          <div class="bp-copys-tit">✍️ Copys publicitarios con IA — canal por canal</div>
+          <div class="bp-copys-grid" id="bp-copys-grid"></div>
+        </div>
+
+        <div class="bp-foot">
+          Buyer Personas y copys generados con IA · Tecnología en Gestión Comercial y Publicidad — Fundación de Educación Superior Nueva América (FESNA)
+        </div>
+      </div>
+
+      <div class="grid3" style="margin-top:2rem">
+        <div class="media-card">
+          <h4>Objetivo</h4>
+          <p small>Construir y optimizar Buyer Persona y copys publicitarios efectivos.</p>
+        </div>
+        <div class="media-card">
+          <h4>Enfoque</h4>
+          <p small>Segmentación avanzada de audiencias y estrategias de mercado digital.</p>
+        </div>
+        <div class="media-card">
+          <h4>Apoyo de IA</h4>
+          <p small>IA generativa de textos para la definición de audiencias y el copywriting.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      Recurso multimedia académico · Brayan Vanegas · FESNA · Segundo corte 2026
+    </footer>
+  </div>
+</body>
+
+<script>
+(function () {
+  var buyers = [
+    {
+      id: 'diego',
+      inicial: 'D', color: '#0A499C',
+      nombre: 'Diego, el bachiller ambicioso',
+      rol: '19 años · recién graduado · quiere trabajar y estudiar',
+      quote: 'Quiero seguir estudiando sin dejar de ayudar en casa, aunque el trancón y la plata no me acompañen.',
+      datos: '<b>Edad</b> 18–22 años<br><b>Ocupación</b> Empleos por horas o primer trabajo<br><b>Ciudad tipo</b> Municipio pequeño o zona sur de la ciudad<br><b>Escolaridad</b> Bachiller recién graduado<br><b>Influencia</b> Decide solo, con aval de la familia<br><b>Objetivo real</b> Ser alguien profesional sin dejar el barrio',
+      dolores: [
+        'Poca disposición de dinero para transporte y papelería',
+        'Sin flexibilidad horaria en la mayoría de las opciones',
+        'Miedo a "quedarse en blanco" después del bachillerato',
+        'Nadie lo orientó sobre qué estudiar realmente',
+        'Cree que la educación superior "no es para gente como él"'
+      ],
+      motivos: [
+        'Independencia económica y trabajo estable',
+        'Salirse del estereotipo de su entorno',
+        'Aprender cosas prácticas para trabajar de verdad',
+        'Título propio que su familia pueda presumir',
+        'Superar el miedo a ser primer profesional en casa'
+      ],
+      digital: [
+        'TikTok (más de 2 horas diarias, en las noches)',
+        'Instagram Reels y videos cortos',
+        'WhatsApp: se guía por los staus de su grupo',
+        'Formato: humor + personajes juveniles que se le puedan parecer',
+        'Facebook: solo para buscar información puntual de establecimientos'
+      ],
+      viaje: 'Ríe con el Reel del profesor joven → lo comenta con sus primos → entra al perfil de FESNA por curiosidad → pregunta "¿cómo inscribo?" por WhatsApp → pide información oficial → convence a su mamá de acompañarlo.',
+      copys: [
+        { canal: 'Instagram · Reel gancho', color: '#E1306C',
+          texto: '<strong>"¿Acabaste el colegio y no sabes qué hacer? 🤔"</strong><br>Tu primer paso no puede ser un parche de ultimahora: te contamos en 30 segundos las formas de empezar a estudiar sin dejar tu semana. La FESNA te acompaña desde el nivel técnico.',
+          cta: 'CTA: <b>"Mira el programa y aprende lo que te mueve"</b> — enlace en bio' },
+        { canal: 'Instagram · Carrusel', color: '#E1306C',
+          texto: '<strong>"Ser profesional se camina por pasos. El primero: decidirse. 😉"</strong><br>Técnica → Tecnología → Profesional. Cada ciclo es una meta que se alcanza a tu ritmo. Tu historia no depende del néctar de hoy sino de tu decisión de mañana.',
+          cta: 'CTA: <b>"Empieza tu ciclo en FESNA"</b>' },
+        { canal: 'TikTok', color: '#000000',
+          texto: '<strong>"POV: saliste del colegio y te preguntan ¿y ahora qué? 😅"</strong><br>Tranqui: existe la formación flexible que se acomoda a tu día a día. Aprende lo que te mueve. 🎯 Sonido en tendencia + corte rápido + texto grande en pantalla.',
+          cta: 'CTA: <b>"Link en bio"</b> — más info en FESNA' },
+        { canal: 'Facebook · Post', color: '#1877F2',
+          texto: '<strong>"El trabajo te da hoy. La formación te da mañana. ¿Por qué no tener ambos? 📈"</strong><br>Ciclos técnicos con enfoque práctico, para quien apenas está empezando. Aprende lo que te mueve.',
+          cta: 'CTA: <b>"Enterate cómo empezar"</b> — sitio oficial FESNA' },
+        { canal: 'WhatsApp · Broadcast', color: '#25D366',
+          texto: '<strong>"¡Hola Diego! 🎓 Tu decisión de seguir estudiando cuenta."</strong><br>Década nueva, formaciones nuevas: técnica, tecnológica y profesional en FESNA. Cuando quieras dudas para decidir, aquí te ayudamos calma.',
+          cta: 'CTA: <b>"Responde INFO"</b> — un asesor oficial te guía' }
+      ]
+    },
+    {
+      id: 'laura',
+      inicial: 'L', color: '#FD531E',
+      nombre: 'Laura, la trabajadora que quiere escalar',
+      rol: '27 años · auxiliar de comercio · aspirante a cargo mejor',
+      quote: 'Llevo años esponja de experiencia. Quiero un título que por fin respalde lo que ya sé hacer.',
+      datos: '<b>Edad</b> 25–34 años<br><b>Ocupación</b> Auxiliar u operaria en comercio o servicios<br><b>Ciudad tipo</b> Cabecera municipal con transporte limitado<br><b>Escolaridad</b> Bachiller + cursos sueltos sin título<br><b>Influencia</b> Decide con su pareja y su familia<br><b>Objetivo real</b> Título formal para acceder a un cargo mejor',
+      dolores: [
+        'Su experiencia laboral no se respalda con ningún título',
+        'El horario presencial choca con los turnos del trabajo',
+        'Se siente "edad avanzada" para volver a estudiar',
+        'Cursos sin valor oficial que no le sirven para postular',
+        'Miedo a empezar y no terminar por falta de tiempo'
+      ],
+      motivos: [
+        'Un título oficial que fortalezca su hoja de vida',
+        'Acceso a cargos con mando o mejor sueldo',
+        'Formación virtual o de horario compatible',
+        'Ser ejemplo para su hijas y sobrinos',
+        'Seguridad de que su esfuerzo económico lo devuelva'
+      ],
+      digital: [
+        'Facebook y WhatsApp como canales confiables diarios',
+        'Instagram y TikTok de forma esporádica',
+        'Se conecta a la tarde-noche, después del trabajo',
+        'Formato: testimonios reales más que anuncios alegres',
+        'Busca y compara en Google antes de decidir'
+      ],
+      viaje: 'Ve un testimonial en Facebook de alguien "igual a ella" → lo guarda y lo comenta con su pareja → pide información por WhatsApp → consulta costos y horarios en los canales oficiales → se decide a empezar por el ciclo técnico.',
+      copys: [
+        { canal: 'Facebook · Video testimonial', color: '#1877F2',
+          texto: '<strong>"A los 27 alcancé el título que creía imposible. 🤍"</strong><br>Laura no empezó de cero: empezó por donde sí podía. Ciclos técnicos que se escalan a Tecnología y a Profesional, con horarios reales para quien trabaja. Aprende lo que te mueve.',
+          cta: 'CTA: <b>"Conoce cómo se escala el nivel Técnico"</b> — FESNA' },
+        { canal: 'Facebook · Post', color: '#1877F2',
+          texto: '<strong>"Tu experiencia ya vale. Ahora hazla oficial. 📊"</strong><br>La formación superior en FESNA respalda lo que ya sabes hacer y te abre sillas donde antes solo mirabas. Aprende lo que te mueve.',
+          cta: 'CTA: <b>"Pregúntale a un asesor"</b> — canales oficiales FESNA' },
+        { canal: 'TikTok / Instagram', color: '#E1306C',
+          texto: '<strong>"Nadie te dijo que estudiar podía ir con mercado, oficina y hijas. 🎧"</strong><br>Ciclos flexibles, trabajo de noche o virtual, y una comunidad que también madruga. Tu momento no está lejos: Aprende lo que te mueve.',
+          cta: 'CTA: <b>"Descubre cómo empieza tu ciclo"</b> — enlace FESNA' },
+        { canal: 'WhatsApp · Broadcast', color: '#25D366',
+          texto: '<strong>"Laura, tu siguiente paso no es suerte: es formación. 📚"</strong><br>Escala de Auxiliar a Técnica, Tecnología o Profesional con horarios compatibles con tu trabajo. Información oficial de los ciclos en FESNA.',
+          cta: 'CTA: <b>"Responde INFO"</b> — un asesor oficial te responde' },
+        { canal: 'IG / FB · Retargeting', color: '#0A499C',
+          texto: '<strong>"¿Sigues diciendo "un día de estos"? 🫡"</strong><br>Ese "un día" se llama hoy: formación técnica con horario flexible y una comunidad que también sale de trabajar a estudiar. Aprende lo que te mueve con FESNA.',
+          cta: 'CTA: <b>"Da el paso — consulta oficial"</b> — FESNA' }
+      ]
+    }
+  ];
+
+  var activo = buyers[0].id;
+  var tabsEl = document.getElementById('bp-tabs');
+
+  function buscar(id) {
+    for (var i = 0; i < buyers.length; i++) { if (buyers[i].id === id) return buyers[i]; }
+    return buyers[0];
+  }
+
+  function listaHTML(items, clase) {
+    return items.map(function (x) { return '<span class="bp-chip ' + clase + '">' + x + '</span>'; }).join('');
+  }
+
+  function construirTab(b) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'bp-tab';
+    btn.dataset.id = b.id;
+    btn.innerHTML =
+      '<span class="bp-mini" style="background:' + b.color + '">' + b.inicial + '</span>' +
+      '<span><span class="bp-q">' + b.nombre + '</span><br><span class="bp-r">' + b.rol + '</span></span>';
+    btn.addEventListener('click', function () { activo = b.id; render(); });
+    tabsEl.appendChild(btn);
+  }
+
+  function render() {
+    var b = buscar(activo);
+    document.getElementById('bp-avatar').style.background = b.color;
+    document.getElementById('bp-avatar').textContent = b.inicial;
+    document.getElementById('bp-nombre').textContent = b.nombre;
+    document.getElementById('bp-rol').textContent = b.rol;
+    document.getElementById('bp-quote').textContent = '"' + b.quote + '"';
+    document.getElementById('bp-datos').innerHTML = b.datos;
+    document.getElementById('bp-dolores').innerHTML = listaHTML(b.dolores, '');
+    document.getElementById('bp-motivos').innerHTML = listaHTML(b.motivos, 'mot');
+    document.getElementById('bp-digital').innerHTML = listaHTML(b.digital, 'dig');
+    document.getElementById('bp-viaje').textContent = b.viaje;
+
+    document.getElementById('bp-copys-grid').innerHTML = b.copys.map(function (c) {
+      return '<div class="cp-card">' +
+             '<span class="cp-canal" style="background:' + c.color + '">' + c.canal + '</span>' +
+             '<p class="cp-texto">' + c.texto + '</p>' +
+             '<div class="cp-cta">' + c.cta + '</div>' +
+             '</div>';
+    }).join('');
+
+    tabsEl.querySelectorAll('.bp-tab').forEach(function (t) {
+      t.classList.toggle('activa', t.dataset.id === activo);
+    });
+  }
+
+  buyers.forEach(construirTab);
+  render();
+})();
+</script>
+</html>
